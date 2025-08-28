@@ -1,0 +1,57 @@
+{
+    "name": "Narendra Singh",
+    "title": "Data Engineer",
+    "about": [
+        "I'm a passionate Data Engineer with experience in Data Engineering and Data Science. I love turning ideas into reality through clean, efficient code.",
+        "My journey in software development started with a curiosity about how things work, and it has grown into a career where I get to solve complex problems every day."
+    ],
+    "skills": [
+        "Spark",
+        "Databricks",
+        "Kafka",
+        "Airflow",
+        "AWS",
+        "Python",
+        "SQL",
+        "Hive",
+        "SQL/NoSQL"
+    ],
+    "projects": [
+        {
+          "id": 1,
+          "title": "Portfolio Website",
+          "imageUrl": "",
+          "description": "A responsive portfolio website built with React and TypeScript to showcase my work and skills. A specialized Retrieval-Augmented Generation (RAG) system that enhances product support by providing accurate, context-aware responses to customer inquiries. This solution combines the power of large language models with targeted knowledge retrieval from product documentation.",
+          "technologies": ["React", "TypeScript", "CSS Modules"],
+          "githubUrl": "https://github.com/yourusername/portfolio",
+          "demoUrl": "https://yourportfolio.com"
+        },
+        {
+          "id": 2,
+          "title": "Task Management App",
+          "imageUrl": "",
+          "description": "A full-stack task management application with user authentication and real-time updates.",
+          "technologies": ["React", "Node.js", "MongoDB"],
+          "githubUrl": "https://github.com/yourusername/task-manager"
+        },
+        {
+          "id": 3,
+          "title": "E-commerce Platform",
+          "imageUrl": "",
+          "description": "An e-commerce platform with product catalog, cart, and checkout functionality.",
+          "technologies": ["React", "Redux", "Firebase"],
+          "githubUrl": "https://github.com/yourusername/ecommerce-app",
+          "demoUrl": "https://yourapp.vercel.app"
+        }
+    ],
+    "contactDetails": {
+      "message": "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!",
+      "socialLinks": [
+        { "name": "GitHub", "url": "https://github.com/yourusername", "icon": "fab fa-github" },
+        { "name": "LinkedIn", "url": "https://linkedin.com/in/yourusername", "icon": "fab fa-linkedin" },
+        { "name": "Twitter", "url": "https://twitter.com/yourusername", "icon": "fab fa-twitter" },
+        { "name": "Email", "url": "mailto:your.email@example.com", "icon": "fas fa-envelope" }
+      ]
+    }
+
+}
