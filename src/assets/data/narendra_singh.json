@@ -8,131 +8,197 @@
   ],
   "skills": [
     {
-      "name": "Spark",
-      "category": [
-        "Big Data"
-      ],
-      "icon": "fab fa-spark"
+      "name": "Python",
+      "category": ["Programming Language"],
+      "icon": "fab fa-python"
     },
     {
-      "name": "Databricks",
-      "category": [
-        "Big Data"
-      ],
-      "icon": "fab fa-databricks"
+      "name": "Scala",
+      "category": ["Programming Language"],
+      "icon": "svg-scala"
     },
     {
-      "name": "Kafka",
+      "name": "Bash",
       "category": [
-        "Big Data",
-        "Messaging",
-        "Streaming Platform"
+        "Programming Language"
       ],
-      "icon": "fab fa-kafka"
-    },
-    {
-      "name": "Airflow",
-      "category": [
-        "Big Data",
-        "Orchestration"
-      ],
-      "icon": "fab fa-airflow"
+      "icon": "fas fa-terminal"
     },
     {
       "name": "AWS",
       "category": [
-        "Cloud",
-        ""
+        "Cloud"
       ],
       "icon": "fab fa-aws"
     },
     {
       "name": "Azure",
       "category": [
-        "Cloud",
-        ""
+        "Cloud"
       ],
-      "icon": "fab fa-aws"
+      "icon": "fab fa-windows"
     },
     {
       "name": "Tencent",
       "category": [
-        "Cloud",
-        ""
+        "Cloud"
       ],
-      "icon": "fab fa-aws"
+      "icon": "fas fa-cloud"
     },
     {
-      "name": "Python",
+      "name": "Airflow",
       "category": [
-        "Programming Language",
-        "Backend"
+        "Data",
+        "Orchestration"
       ],
-      "icon": "fab fa-python"
+      "icon": "fas fa-fan"
     },
     {
-      "name": "Scala",
+      "name": "Spark",
       "category": [
-        "Programming Language",
-        "Backend"
+        "Data"
       ],
-      "icon": "fab fa-scala"
+      "icon": "svg-spark"
+    },
+    {
+      "name": "Databricks",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-databricks"
+    },
+    {
+      "name": "Kafka",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-kafka"
     },
     {
       "name": "SQL",
       "category": [
-        "Database",
-        "Backend"
+        "Data"
       ],
-      "icon": "fab fa-sql"
+      "icon": "fas fa-database"
     },
     {
       "name": "Hive",
       "category": [
-        "Database",
-        "Backend"
+        "Data"
       ],
-      "icon": "fab fa-hive"
+      "icon": "svg-hive"
     },
     {
-      "name": "SQL/NoSQL",
+      "name": "MySQL",
       "category": [
-        "Database",
-        "Backend"
+        "Data"
       ],
-      "icon": "fab fa-sql-nosql"
+      "icon": "svg-mysql"
+    },
+    {
+      "name": "Postgres",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-postgres"
+    },
+    {
+      "name": "Elasticsearch",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-elasticsearch"
+    },
+    {
+      "name": "Logstash",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-logstash"
+    },
+    {
+      "name": "Kibana",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-kibana"
+    },
+    {
+      "name": "Clickhouse",
+      "category": [
+        "Data"
+      ],
+      "icon": "fas fa-database"
     },
     {
       "name": "LLM",
       "category": [
-        "AI",
-        "Backend"
+        "AI/ML"
       ],
-      "icon": "fab fa-llm"
+      "icon": "fas fa-robot"
     },
     {
       "name": "Ollama",
       "category": [
-        "AI",
-        "Backend"
+        "AI/ML"
       ],
-      "icon": "fab fa-ollama"
+      "icon": "fas fa-brain"
     },
     {
       "name": "LangChain",
       "category": [
-        "AI",
-        "Backend"
+        "AI/ML"
       ],
-      "icon": "fab fa-langchain"
+      "icon": "fas fa-link"
     },
     {
       "name": "FastAPI",
       "category": [
-        "API",
         "Backend"
       ],
-      "icon": "fab fa-fastapi"
+      "icon": "svg-fastapi"
+    },
+    {
+      "name": "Docker",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "svg-docker"
+    },
+    {
+      "name": "K8s",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "svg-k8s"
+    },
+    {
+      "name": "CircleCI",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "svg-circleci"
+    },
+    {
+      "name": "GitHub",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "fab fa-github"
+    },
+    {
+      "name": "GitLab",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "fab fa-gitlab"
+    },
+    {
+      "name": "Bitbucket",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "fab fa-bitbucket"
     }
   ],
   "projects": [

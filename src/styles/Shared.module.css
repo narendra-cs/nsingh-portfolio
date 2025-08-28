@@ -1,0 +1,52 @@
+@import './theme.css';
+
+.sectionHeading {
+  position: relative;
+  padding-bottom: 1rem;
+  display: inline-block;
+  margin: 0 auto 3rem;
+  text-align: center;
+  width: auto;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+}
+
+.sectionHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+}
+
+/* Centered container for section content */
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Common section styling */
+.section {
+  padding: 6rem 0;
+  /* Background color removed as per user request */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  .section {
+    padding: 8rem 0;
+  }
+  
+  .sectionContent {
+    padding: 0 2rem;
+  }
+}

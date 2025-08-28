@@ -1,0 +1,242 @@
+@import './theme.css';
+
+.aboutSection {
+  padding: 6rem 0;
+  /* Background color removed as per user request */
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.aboutSection h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0 auto 3rem;
+  color: var(--text-primary);
+  display: block;
+  width: 100%;
+}
+
+.aboutSection h2 {
+  position: relative;
+  padding-bottom: 1rem;
+  display: inline-block;
+  margin: 0 auto 3rem;
+  text-align: center;
+  width: auto;
+}
+
+.aboutSection h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutText {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.aboutText p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.skills {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+/* Skill Filters */
+.skillFilters {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.skillFilters h4 {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.filterCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filterCheckbox {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-light);
+  user-select: none;
+}
+
+.filterCheckbox:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--primary-light);
+}
+
+.filterCheckbox.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Skills Divider */
+.skillsDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+  margin: 1.5rem 0;
+  border: none;
+  width: 100%;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.skillTag {
+  background-color: var(--bg-tertiary);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.skillTag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* Removed checkmark from skill tags */
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aboutText,
+.skills {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.skills {
+  animation-delay: 0.2s;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .skillsGrid {
+    justify-content: flex-start;
+  }
+  
+  .skillTag {
+    margin: 0.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutSection {
+    padding: 8rem 0;
+  }
+  
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .skillTag {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: var(--gray-800);
+}
+
+[data-theme='dark'] .skillTag:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+}
+
+[data-theme='dark'] .skills {
+  border-left-color: var(--gray-800);
+}
