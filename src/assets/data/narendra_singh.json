@@ -1,11 +1,221 @@
 {
-    "name": "Narendra Singh",
-    "title": "Data Engineer",
-    "about": [
-        "I'm a passionate Data Engineer with experience in Data Engineering and Data Science. I love turning ideas into reality through clean, efficient code.",
-        "My journey in software development started with a curiosity about how things work, and it has grown into a career where I get to solve complex problems every day."
-    ],
-    "skills": [
+  "name": "Narendra Singh",
+  "title": "Data Engineer",
+  "imageUrl": "/images/narendra_singh.jpg",
+  "about": [
+    "I'm a passionate Data Engineer with experience in Data Engineering and Data Science. I love turning ideas into reality through clean, efficient code.",
+    "My journey in software development started with a curiosity about how things work, and it has grown into a career where I get to solve complex problems every day."
+  ],
+  "skills": [
+    {
+      "name": "Spark",
+      "category": [
+        "Big Data"
+      ],
+      "icon": "fab fa-spark"
+    },
+    {
+      "name": "Databricks",
+      "category": [
+        "Big Data"
+      ],
+      "icon": "fab fa-databricks"
+    },
+    {
+      "name": "Kafka",
+      "category": [
+        "Big Data",
+        "Messaging",
+        "Streaming Platform"
+      ],
+      "icon": "fab fa-kafka"
+    },
+    {
+      "name": "Airflow",
+      "category": [
+        "Big Data",
+        "Orchestration"
+      ],
+      "icon": "fab fa-airflow"
+    },
+    {
+      "name": "AWS",
+      "category": [
+        "Cloud",
+        ""
+      ],
+      "icon": "fab fa-aws"
+    },
+    {
+      "name": "Azure",
+      "category": [
+        "Cloud",
+        ""
+      ],
+      "icon": "fab fa-aws"
+    },
+    {
+      "name": "Tencent",
+      "category": [
+        "Cloud",
+        ""
+      ],
+      "icon": "fab fa-aws"
+    },
+    {
+      "name": "Python",
+      "category": [
+        "Programming Language",
+        "Backend"
+      ],
+      "icon": "fab fa-python"
+    },
+    {
+      "name": "Scala",
+      "category": [
+        "Programming Language",
+        "Backend"
+      ],
+      "icon": "fab fa-scala"
+    },
+    {
+      "name": "SQL",
+      "category": [
+        "Database",
+        "Backend"
+      ],
+      "icon": "fab fa-sql"
+    },
+    {
+      "name": "Hive",
+      "category": [
+        "Database",
+        "Backend"
+      ],
+      "icon": "fab fa-hive"
+    },
+    {
+      "name": "SQL/NoSQL",
+      "category": [
+        "Database",
+        "Backend"
+      ],
+      "icon": "fab fa-sql-nosql"
+    },
+    {
+      "name": "LLM",
+      "category": [
+        "AI",
+        "Backend"
+      ],
+      "icon": "fab fa-llm"
+    },
+    {
+      "name": "Ollama",
+      "category": [
+        "AI",
+        "Backend"
+      ],
+      "icon": "fab fa-ollama"
+    },
+    {
+      "name": "LangChain",
+      "category": [
+        "AI",
+        "Backend"
+      ],
+      "icon": "fab fa-langchain"
+    },
+    {
+      "name": "FastAPI",
+      "category": [
+        "API",
+        "Backend"
+      ],
+      "icon": "fab fa-fastapi"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "RAG-based Chat Assistant for FAQ",
+      "imageUrl": "/images/projects-imgs/Q&A_Chatbot_chat.png",
+      "description": "A specialized Retrieval-Augmented Generation (RAG) system that enhances product support by providing accurate, context-aware responses to customer inquiries. This solution combines the power of large language models with targeted knowledge retrieval from product documentation.",
+      "technologies": [
+        "LLM",
+        "LangChain",
+        "RAG",
+        "VectorDB",
+        "FastAPI",
+        "Python",
+        "React"
+      ],
+      "githubUrl": "https://github.com/narendra-cs/rag-based-chat-assistent-for-faq",
+      "demoUrl": ""
+    },
+    {
+      "id": 2,
+      "title": "AI-Powered Story Telling Platform",
+      "imageUrl": "/images/projects-imgs/story_telling_platform.png",
+      "description": "An interactive web application that generates personalized stories using AI models from OpenAI, LangChain, and local LLMs via Ollama. Users can provide inputs and receive AI-generated stories based on their preferences.",
+      "technologies": [
+        "LLM",
+        "OpenAI",
+        "Ollama",
+        "LangChain",
+        "FastAPI",
+        "Python"
+      ],
+      "githubUrl": "https://github.com/narendra-cs/Story-Telling-Platform"
+    },
+    {
+      "id": 3,
+      "title": "E-commerce Platform",
+      "imageUrl": "",
+      "description": "An e-commerce platform with product catalog, cart, and checkout functionality.",
+      "technologies": [
+        "React",
+        "Redux",
+        "Firebase"
+      ],
+      "githubUrl": "https://github.com/yourusername/ecommerce-app",
+      "demoUrl": "https://yourapp.vercel.app"
+    }
+  ],
+  "contactDetails": {
+    "message": "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!",
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/yourusername",
+        "icon": "fab fa-github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/yourusername",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/yourusername",
+        "icon": "fab fa-twitter"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:your.email@example.com",
+        "icon": "fas fa-envelope"
+      }
+    ]
+  },
+  "professionalExperience": [
+    {
+      "title": "Senior Data Engineer",
+      "company": "Thoughtworks",
+      "startDate": "2022-01-01",
+      "endDate": null,
+      "location": "Pune, India",
+      "description": "I was a Data Engineer at Thoughtworks where I was responsible for building data pipelines and data models.",
+      "technologies": [
         "Spark",
         "Databricks",
         "Kafka",
@@ -15,43 +225,37 @@
         "SQL",
         "Hive",
         "SQL/NoSQL"
-    ],
-    "projects": [
-        {
-          "id": 1,
-          "title": "Portfolio Website",
-          "imageUrl": "",
-          "description": "A responsive portfolio website built with React and TypeScript to showcase my work and skills. A specialized Retrieval-Augmented Generation (RAG) system that enhances product support by providing accurate, context-aware responses to customer inquiries. This solution combines the power of large language models with targeted knowledge retrieval from product documentation.",
-          "technologies": ["React", "TypeScript", "CSS Modules"],
-          "githubUrl": "https://github.com/yourusername/portfolio",
-          "demoUrl": "https://yourportfolio.com"
-        },
-        {
-          "id": 2,
-          "title": "Task Management App",
-          "imageUrl": "",
-          "description": "A full-stack task management application with user authentication and real-time updates.",
-          "technologies": ["React", "Node.js", "MongoDB"],
-          "githubUrl": "https://github.com/yourusername/task-manager"
-        },
-        {
-          "id": 3,
-          "title": "E-commerce Platform",
-          "imageUrl": "",
-          "description": "An e-commerce platform with product catalog, cart, and checkout functionality.",
-          "technologies": ["React", "Redux", "Firebase"],
-          "githubUrl": "https://github.com/yourusername/ecommerce-app",
-          "demoUrl": "https://yourapp.vercel.app"
-        }
-    ],
-    "contactDetails": {
-      "message": "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!",
-      "socialLinks": [
-        { "name": "GitHub", "url": "https://github.com/yourusername", "icon": "fab fa-github" },
-        { "name": "LinkedIn", "url": "https://linkedin.com/in/yourusername", "icon": "fab fa-linkedin" },
-        { "name": "Twitter", "url": "https://twitter.com/yourusername", "icon": "fab fa-twitter" },
-        { "name": "Email", "url": "mailto:your.email@example.com", "icon": "fas fa-envelope" }
       ]
     }
-
+  ],
+  "certifications": [
+    {
+      "title": "Data Engineer",
+      "provider": "Thoughtworks",
+      "startDate": "2022-01-01",
+      "endDate": null,
+      "description": "",
+      "technologies": [
+        "Spark",
+        "Databricks",
+        "Kafka",
+        "Airflow",
+        "AWS",
+        "Python",
+        "SQL",
+        "Hive",
+        "SQL/NoSQL"
+      ],
+      "credentialUrl": ""
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "position": "Software Engineer",
+      "company": "Thoughtworks",
+      "quote": "Narendra is a great Data Engineer. He is always willing to help and is a great team player.",
+      "linkedinUrl": "https://linkedin.com/in/yourusername"
+    }
+  ]
 }

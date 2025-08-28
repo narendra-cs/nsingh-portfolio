@@ -9,6 +9,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const maxDescriptionLength = 100;
+  const maxTechnologies = 6;
 
   const toggleDescription = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -82,7 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           )}
         </p>
         <div className={styles.technologies}>
-          {project.technologies.map((tech, index) => (
+          {project.technologies.slice(0, maxTechnologies).map((tech, index) => (
             <span key={index} className={styles.techTag}>
               {tech}
             </span>
