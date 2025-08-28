@@ -10,12 +10,43 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
+    // Set initial scroll state
+    const handleInitialScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Call once on mount
+    handleInitialScroll();
+
+    // Throttle scroll event for better performance
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateScrollState = () => {
+      const currentScrollY = window.scrollY;
+      // Update state only if scroll position changed significantly
+      if (Math.abs(currentScrollY - lastScrollY) > 1) {
+        setIsScrolled(currentScrollY > 10);
+        lastScrollY = currentScrollY;
+      }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    };
+
+    // Use both scroll and wheel events for better cross-browser support
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -30,17 +61,34 @@ const Navbar = () => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Close mobile menu if open
+      if (isMenuOpen) {
+        closeMenu();
+      }
+
+      // Smooth scroll to section with offset for fixed header
+      window.scrollTo({
+        top: element.getBoundingClientRect().top + window.pageYOffset - 80, // 80px offset for header height
+        behavior: 'smooth',
+      });
+
+      // Update URL without page reload
       window.history.pushState({}, '', `${window.location.pathname}${href}`);
     }
-    closeMenu();
   };
 
   // Filter out the Home link since it's already in the logo
   const navLinks = navbarLinks.navbar_links.filter((link) => link.name !== 'Home');
 
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
+    <nav
+      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''} ${isMenuOpen ? styles.menuOpen : ''}`}
+      style={
+        {
+          '--scroll-position': isScrolled ? 1 : 0,
+        } as React.CSSProperties
+      }
+    >
       <div className={styles.container}>
         <a
           href='#home'
@@ -52,7 +100,10 @@ const Navbar = () => {
         </a>
 
         <div className={styles.navRight}>
-          <div className={`${styles.navLinks} ${isMenuOpen ? styles.showMenu : ''}`}>
+          <div
+            className={`${styles.navLinks} ${isMenuOpen ? styles.showMenu : ''}`}
+            aria-hidden={!isMenuOpen && window.innerWidth < 768}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.href}
