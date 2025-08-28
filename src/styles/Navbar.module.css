@@ -66,6 +66,12 @@
   padding: 0.5rem 0;
   transition: color var(--transition-normal);
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.navLink i, .resumeButton i {
+  margin-right: 0.5rem;
 }
 
 .navLink::after {
