@@ -3,7 +3,7 @@ import { usePortfolioData } from '../contexts';
 import styles from '../styles/About.module.css';
 import shared from '../styles/Shared.module.css';
 import SkillFilters from '../components/SkillFilters';
-import SkillIcon from '../components/common/SkillIcon';
+import Icon from '../components/common/Icon';
 
 const About: React.FC = () => {
   const portfolioStore = usePortfolioData();
@@ -87,11 +87,7 @@ const About: React.FC = () => {
                 filteredSkills.map((skill, index) => (
                   <div key={`${skill.name}-${index}`} className={styles.skillTag}>
                     {skill.icon.startsWith('svg') ? (
-                      <SkillIcon
-                        icon={skill.icon}
-                        className={styles.skillIcon}
-                        title={skill.name}
-                      />
+                      <Icon icon={skill.icon} className={styles.skillIcon} />
                     ) : (
                       <i className={skill.icon} />
                     )}

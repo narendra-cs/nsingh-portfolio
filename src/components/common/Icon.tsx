@@ -6,19 +6,17 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import iconPaths from '../../assets/data/icons_path.json';
 
-// Add all icons to the library
 library.add(fas, fab);
 
-interface SkillIconProps {
+interface IconProps {
   icon: string;
   className?: string;
-  title: string;
 }
 
-const SkillIcon: React.FC<SkillIconProps> = ({ icon, className = '', title }) => {
+const Icon: React.FC<IconProps> = ({ icon, className = '' }) => {
   // Check if it's an SVG path reference (starts with 'svg-')
   if (icon.startsWith('svg-')) {
-    const iconKey = title;
+    const iconKey = icon.replace('svg-', '').toLowerCase();
     const pathData = (iconPaths as Record<string, string>)[iconKey];
 
     if (pathData) {
@@ -35,9 +33,9 @@ const SkillIcon: React.FC<SkillIconProps> = ({ icon, className = '', title }) =>
             display: 'inline-block',
           }}
           role='img'
-          aria-label={title}
+          aria-label={icon}
         >
-          <title>{title}</title>
+          <title>{icon}</title>
           <path d={pathData} />
         </svg>
       );
@@ -45,13 +43,7 @@ const SkillIcon: React.FC<SkillIconProps> = ({ icon, className = '', title }) =>
   }
 
   // Fallback to question mark icon if no match is found
-  return (
-    <FontAwesomeIcon
-      icon={faQuestionCircle}
-      className={className}
-      title={title || `Unknown icon: ${icon}`}
-    />
-  );
+  return <FontAwesomeIcon icon={faQuestionCircle} className={className} title={icon} />;
 };
 
-export default SkillIcon;
+export default Icon;
