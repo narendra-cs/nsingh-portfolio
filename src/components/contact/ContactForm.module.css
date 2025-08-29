@@ -1,0 +1,173 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 500px; /* Reduced width */
+  margin: 0 auto;
+}
+
+.formGroup {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.formControl {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.formControl::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.formControl:focus::placeholder {
+  opacity: 0.5;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formControl:focus,
+.formControl:not(:placeholder-shown) {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.formControl:focus {
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.floatingLabel {
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background: var(--bg-primary);
+  padding: 0 0.5rem;
+  margin: 0;
+  transform-origin: left top;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Hide the placeholder when the floating label is shown */
+.formControl:focus::placeholder,
+.formControl:not(:placeholder-shown)::placeholder {
+  opacity: 0;
+}
+
+.formControl:focus + .floatingLabel,
+.formControl:not(:placeholder-shown) + .floatingLabel {
+  top: 0;
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+  color: var(--primary);
+}
+
+textarea.formControl {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.submitBtn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 180px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--primary-dark);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.submitBtn:hover::before {
+  width: 100%;
+}
+
+.submitBtn:active {
+  transform: translateY(1px);
+}
+
+.submitBtn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submitBtn:disabled::before {
+  display: none;
+}
+
+/* Error state */
+.error {
+  border-color: #e74c3c !important;
+}
+
+.error + .floatingLabel {
+  color: #e74c3c !important;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: block;
+  padding-left: 0.5rem;
+}
+
+/* Loading state */
+.submitBtn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}

@@ -1,0 +1,166 @@
+/* Add scroll-margin-top to account for fixed navbar */
+.contactSection {
+  scroll-margin-top: 80px; /* Height of your navbar */
+  padding: 1rem 0 3rem;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: flex-start; /* Align to top */
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin: 0 0 2rem 0; /* Reduced bottom margin */
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-top: 1rem;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.contactInfo {
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.contactMessage {
+  margin: 1.5rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background-color: var(--primary);
+  border: 2px solid transparent;
+}
+
+.socialLink:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcon {
+  font-size: 1.25rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover .socialIcon {
+  color: white;
+}
+
+.contactFormContainer {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contactFormContainer h3 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Form styles (also used by ContactForm component) */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.formControl {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formControl:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+textarea.formControl {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background-color: #2980b9;
+}
+
+.statusMessage {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background-color: #d4edda;
+  color: #155724;
+  font-size: 0.9rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}

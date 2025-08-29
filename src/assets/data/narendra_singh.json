@@ -233,46 +233,8 @@
         "Python"
       ],
       "githubUrl": "https://github.com/narendra-cs/Story-Telling-Platform"
-    },
-    {
-      "id": 3,
-      "title": "E-commerce Platform",
-      "imageUrl": "",
-      "description": "An e-commerce platform with product catalog, cart, and checkout functionality.",
-      "technologies": [
-        "React",
-        "Redux",
-        "Firebase"
-      ],
-      "githubUrl": "https://github.com/yourusername/ecommerce-app",
-      "demoUrl": "https://yourapp.vercel.app"
     }
   ],
-  "contactDetails": {
-    "message": "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!",
-    "socialLinks": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/yourusername",
-        "icon": "fab fa-github"
-      },
-      {
-        "name": "LinkedIn",
-        "url": "https://linkedin.com/in/yourusername",
-        "icon": "fab fa-linkedin"
-      },
-      {
-        "name": "Twitter",
-        "url": "https://twitter.com/yourusername",
-        "icon": "fab fa-twitter"
-      },
-      {
-        "name": "Email",
-        "url": "mailto:your.email@example.com",
-        "icon": "fas fa-envelope"
-      }
-    ]
-  },
   "professionalExperience": [
     {
       "title": "Senior Data Engineer",
@@ -323,5 +285,30 @@
       "quote": "Narendra is a great Data Engineer. He is always willing to help and is a great team player.",
       "linkedinUrl": "https://linkedin.com/in/yourusername"
     }
-  ]
+  ],
+  "contactDetails": {
+    "message": "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!",
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/yourusername",
+        "icon": "fab fa-github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/yourusername",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/yourusername",
+        "icon": "fab fa-twitter"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:your.email@example.com",
+        "icon": "fas fa-envelope"
+      }
+    ]
+  }
 }
