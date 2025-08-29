@@ -1,31 +1,77 @@
 .testimonials {
   margin: 6rem 0;
   width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
 }
 
-.testimonialsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.testimonialsWrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.testimonialsContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+
+.testimonialsTrack {
+  display: flex;
   gap: 2rem;
-  margin-top: 2rem;
+  width: max-content;
+  will-change: transform;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  animation: scroll var(--scroll-duration, 30s) linear infinite;
+}
+
+.testimonialsTrack.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3)); /* Move by one third of the width */
+  }
 }
 
 .testimonialCard {
   background: var(--card-bg);
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--border-color);
+  width: 320px;
+  min-width: 320px;
+  max-width: calc(100vw - 4rem);
+  flex-shrink: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  scroll-snap-align: start;
   height: auto;
-  min-height: 0; /* Allows the card to shrink below content size if needed */
+  min-height: 200px;
+  transition: all 0.3s ease;
+  box-shadow: none;
 }
 
 .testimonialCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
 .quoteIcon {
@@ -39,16 +85,17 @@
   font-style: italic;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding-left: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  padding-left: 1rem;
   border-left: 3px solid var(--primary);
   flex-grow: 1;
-  margin: 0 0 1.5rem 0;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* Limit to 5 lines max */
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-height: 150px;
+  font-size: 0.95rem;
 }
 
 .author {
