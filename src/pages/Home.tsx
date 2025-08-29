@@ -1,6 +1,7 @@
 import React from 'react';
 import { usePortfolioData } from '../contexts';
 import styles from '../styles/Home.module.css';
+import shared from '../styles/Shared.module.css';
 
 const Home: React.FC = () => {
   const portfolioStore = usePortfolioData();
@@ -9,21 +10,21 @@ const Home: React.FC = () => {
   const imageUrl = portfolioStore.portfolioData?.imageUrl ?? '';
 
   return (
-    <section id='home' className={styles.homeSection}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>
-            Hi, I'm <span className={styles.highlight}>{name}</span>
+    <section id='home' className={`${styles.homeSection} ${shared.section}`}>
+      <div className={shared.container}>
+        <div className={shared.content}>
+          <h1 className={shared.title}>
+            Hi, I'm <span className={shared.highlight}>{name}</span>
           </h1>
-          <h2 className={styles.subtitle}>{title && <>{title} & </>}Tech Enthusiast</h2>
-          <p className={styles.description}>
+          <h2 className={shared.subtitle}>{title && <>{title} & </>}Tech Enthusiast</h2>
+          <p className={shared.description}>
             I build data solutions and create meaningful user experiences through code.
           </p>
-          <div className={styles.ctaButtons}>
-            <a href='#about' className={`${styles.button} ${styles.primary}`}>
+          <div className={shared.ctaButtons}>
+            <a href='#about' className={`${shared.button} ${shared.primary}`}>
               Learn More
             </a>
-            <a href='#contact' className={`${styles.button} ${styles.secondary}`}>
+            <a href='#contact' className={`${shared.button} ${shared.secondary}`}>
               Contact Me
             </a>
           </div>
