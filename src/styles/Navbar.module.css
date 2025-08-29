@@ -66,7 +66,7 @@
 }
 
 /* Dark theme adjustments for scrolled navbar */
-[data-theme="dark"] .navbar.scrolled {
+[data-theme='dark'] .navbar.scrolled {
   background-color: rgba(15, 118, 110, 0.98); /* Slightly more opaque in dark mode */
   border-bottom: 1px solid rgba(45, 212, 191, 0.3); /* Primary light with 30% opacity */
 }
@@ -129,7 +129,9 @@
   font-weight: 500;
   position: relative;
   padding: 0.5rem 0;
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -139,7 +141,9 @@
 
 .navbar.scrolled .navLink {
   color: var(--text-secondary);
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .navbar.scrolled .navLink:hover,
@@ -158,7 +162,8 @@
   will-change: transform, opacity, color, background-color;
 }
 
-.navLink i, .resumeButton i {
+.navLink i,
+.resumeButton i {
   margin-right: 0.5rem;
 }
 
@@ -174,7 +179,10 @@
   width: 0;
   height: 2px;
   background-color: var(--primary);
-  transition: width 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease,
+    background-color 0.3s ease;
   opacity: 0.8;
 }
 
@@ -204,7 +212,9 @@
   width: 0;
   height: 2px;
   background-color: var(--white);
-  transition: width 0.3s ease, opacity 0.3s ease;
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
   opacity: 0;
 }
 
@@ -277,9 +287,11 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%) center/15000%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1%, transparent 1%) center/15000%;
   opacity: 0;
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   pointer-events: none;
 }
 
@@ -347,7 +359,7 @@
   border-bottom: 1px solid var(--border-light);
 }
 
-[data-theme="dark"] .navbar.menuOpen {
+[data-theme='dark'] .navbar.menuOpen {
   background-color: rgba(15, 23, 42, 0.98) !important;
 }
 
@@ -386,7 +398,7 @@
   .container {
     padding: 0 1.5rem;
   }
-  
+
   .logo {
     padding-left: 0;
   }
@@ -406,39 +418,39 @@
 }
 
 /* Dark theme overrides */
-[data-theme="dark"] .navbar {
+[data-theme='dark'] .navbar {
   background-color: rgba(15, 23, 42, 0.5);
   border-bottom: 1px solid transparent;
 }
 
-[data-theme="dark"] .navbar.scrolled {
+[data-theme='dark'] .navbar.scrolled {
   background-color: rgba(15, 23, 42, 0.98);
   border-bottom: 1px solid var(--border-light);
 }
 
-[data-theme="dark"] .logo,
-[data-theme="dark"] .navLink,
-[data-theme="dark"] .menuButton span {
+[data-theme='dark'] .logo,
+[data-theme='dark'] .navLink,
+[data-theme='dark'] .menuButton span {
   color: var(--text-primary);
 }
 
-[data-theme="dark"] .navLink:hover,
-[data-theme="dark"] .navLink.active {
+[data-theme='dark'] .navLink:hover,
+[data-theme='dark'] .navLink.active {
   color: var(--primary-light);
 }
 
-[data-theme="dark"] .resumeButton {
+[data-theme='dark'] .resumeButton {
   border-color: var(--primary-light);
   color: var(--primary-light);
 }
 
-[data-theme="dark"] .resumeButton:hover {
+[data-theme='dark'] .resumeButton:hover {
   background-color: var(--primary-light);
   color: var(--bg-primary);
 }
 
 @media (max-width: 768px) {
-  [data-theme="dark"] .navLinks {
+  [data-theme='dark'] .navLinks {
     background-color: var(--bg-secondary);
   }
 }

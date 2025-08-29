@@ -129,7 +129,7 @@
   .certificationsGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .certificationCard {
     padding: 1rem;
   }
