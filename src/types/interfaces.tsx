@@ -63,13 +63,12 @@ export interface Experience {
 }
 
 export interface Certification {
-  title: string;
-  provider: string;
-  startDate: string;
-  endDate: string | null;
-  description: string;
-  technologies: string[];
+  name: string;
+  issuer: string;
+  issuedOn: string;
+  expiresOn: string;
   credentialUrl: string;
+  icon: string;
 }
 
 export interface Testimonial {

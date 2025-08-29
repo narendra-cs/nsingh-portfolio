@@ -330,6 +330,48 @@
       "linkedinUrl": "https://linkedin.com/in/yourusername"
     }
   ],
+  "certifications": [
+    {
+      "name": "Databricks Certified Data Engineer Associate",
+      "issuer": "Databricks",
+      "issuedOn": "2024-12-28",
+      "expiresOn": "2026-12-28",
+      "credentialUrl": "https://credentials.databricks.com/071d18c3-131a-4768-8eec-963926b90671#acc.ip2ErL9l",
+      "icon": "svg-databricks"
+    },
+    {
+      "name": "Academy Accreditation - Databricks Lakehouse Fundamentals",
+      "issuer": "Databricks",
+      "issuedOn": "2023-01-15",
+      "expiresOn": "2024-01-15",
+      "credentialUrl": "https://credentials.databricks.com/7759616d-cd42-413e-8c94-7a5baf6e30c3#acc.jxQ1t46e",
+      "icon": "svg-databricks"
+    },
+    {
+      "name": "Confluent Fundamentals Accreditation",
+      "issuer": "Confluent",
+      "issuedOn": "2025-08-17",
+      "expiresOn": null,
+      "credentialUrl": "https://certificates.confluent.io/a59cb32c-f339-4a64-b101-e7a350de4a4f#acc.kRhvKwiU",
+      "icon": "svg-confluent"
+    },
+    {
+      "name": "CCA-175: Spark and Hadoop Developer",
+      "issuer": "Cloudera",
+      "issuedOn": "2025-08-17",
+      "expiresOn": null,
+      "credentialUrl": "#",
+      "icon": "svg-cloudera"
+    },
+    {
+      "name": "Astronomer Certification for Apache Airflow Fundamentals",
+      "issuer": "Astronomer",
+      "issuedOn": "2025-08-17",
+      "expiresOn": null,
+      "credentialUrl": "#",
+      "icon": "fas fa-fan"
+    }
+  ],
   "contactDetails": {
     "message": "Whether you have a question, a project idea, or just want to say hello — I’d love to hear from you. Feel free to reach out, and I’ll get back to you as soon as possible. Thanks for stopping by!",
     "socialLinks": [
