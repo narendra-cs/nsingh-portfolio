@@ -1,9 +1,9 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import { usePortfolioData } from '../../contexts';
-import ExperienceItem from './ExperienceItem';
-import styles from './Experiences.module.css';
-import shared from '../../styles/Shared.module.css';
+import { usePortfolioData } from '../contexts';
+import ExperienceItem from '../components/ExperienceItem';
+import styles from '../styles/Experiences.module.css';
+import shared from '../styles/Shared.module.css';
 
 const Experiences: React.FC = observer(() => {
   const { portfolioData } = usePortfolioData();

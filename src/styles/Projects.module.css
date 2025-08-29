@@ -1,0 +1,23 @@
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: minmax(280px, 1fr);
+    max-width: 600px;
+  }
+}
+
+/* Ensure the section takes full width but content is centered */
+.section {
+  display: flex;
+  flex-direction: column;
+}

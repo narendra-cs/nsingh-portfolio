@@ -2,8 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { usePortfolioData } from '../contexts';
 import styles from '../styles/About.module.css';
 import shared from '../styles/Shared.module.css';
-import SkillFilters from '../components/skills/SkillFilters';
-import SkillIcon from '../components/skills/SkillIcon'; // Updated import path
+import SkillFilters from '../components/SkillFilters';
+import SkillIcon from '../components/common/SkillIcon';
 
 const About: React.FC = () => {
   const portfolioStore = usePortfolioData();

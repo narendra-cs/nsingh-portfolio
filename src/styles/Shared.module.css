@@ -2,8 +2,10 @@
 
 .section {
   padding: 2rem 0;
+  width: 100%;
   position: relative;
   overflow: hidden;
+  align-items: center;
 }
 
 .sectionContent {
@@ -79,6 +81,99 @@
   border-radius: 2px;
 }
 
+/* Card Styles */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-light);
+}
+
+.cardImageContainer {
+  width: 100%;
+  min-height: 180px;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cardImageContainer::after {
+  content: "Image not found";
+  position: absolute;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.cardImageContainer:has(img[style*="display: none"])::after {
+  display: block;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  object-position: center;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cardDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.techTag {
+  background-color: var(--bg-tertiary);
+  color: var(--primary-dark);
+  padding: 0.35rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--primary-light);
+}
+
 /* Common Typography */
 .title {
   font-size: 3.5rem;
@@ -116,6 +211,23 @@
   justify-content: flex-start;
   width: 100%;
   margin-top: 1rem;
+}
+
+.readMoreButton {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.25rem;
+  font-size: inherit;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.readMoreButton:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
 }
 
 /* Common Button Styles */
@@ -162,6 +274,26 @@
   box-shadow: var(--shadow-md);
   text-decoration: none;
 }
+
+.buttonLink {
+  background: none !important;
+  color: var(--primary) !important;
+  padding: 0 !important;
+  border: none !important;
+  display: inline !important;
+  font-size: inherit !important;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+.buttonLink:hover {
+  text-decoration: underline;
+  color: var(--primary-dark) !important;
+  background: none !important;
+  transform: none !important;
+}
+
 
 /* Ensure consistent button states */
 .button:visited,

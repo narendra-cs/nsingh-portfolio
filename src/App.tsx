@@ -5,7 +5,7 @@ import Navbar from './components/common/Navbar';
 import { navbarLinks } from './components/common/Constants';
 import { usePortfolioData } from './contexts/';
 import { PortfolioDataProvider } from './contexts/PortfolioDataContext';
-import './App.css';
+import './styles/App.css';
 
 const AppContent: React.FC = observer(() => {
   const portfolioStore = usePortfolioData();

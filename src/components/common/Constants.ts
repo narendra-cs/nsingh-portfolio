@@ -1,6 +1,5 @@
 import { NavLink } from '../../types/interfaces';
-import { Home, About, Projects, Contact } from '../../pages';
-import Experiences from '../experience/Experiences';
+import { Home, About, Projects, Contact, Experiences } from '../../pages';
 
 export const navbarLinks = {
   navbar_links: [

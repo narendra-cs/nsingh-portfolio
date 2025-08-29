@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Project } from '../../../types/interfaces';
-import styles from './ProjectCard.module.css';
+import { Project } from '../types/interfaces';
+import shared from '../styles/Shared.module.css';
 
 interface ProjectCardProps {
   project: Project;
@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <button
           type='button'
           onClick={toggleDescription}
-          className={styles.readMoreButton}
+          className={`${shared.button} ${shared.buttonLink}`}
           aria-label='Read more'
         >
           Read More
@@ -41,50 +41,40 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   };
 
   return (
-    <div className={styles.card}>
-      {project.imageUrl ? (
-        <div className={styles.imageContainer}>
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            className={styles.projectImage}
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
+    <div className={shared.card}>
+      <div className={shared.cardImageContainer}>
+        <img
+          src={project.imageUrl || '/images/project-placeholder.jpg'}
+          alt={project.title}
+          className={shared.cardImage}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (project.imageUrl) {
               target.src = '/images/project-placeholder.jpg';
-            }}
-          />
-        </div>
-      ) : (
-        <div className={styles.imageContainer}>
-          <img
-            src='/images/project-placeholder.jpg'
-            alt={project.title}
-            className={styles.projectImage}
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
+            } else {
               target.style.display = 'none';
-            }}
-          />
-        </div>
-      )}
-      <div className={styles.cardContent}>
-        <h3 className={styles.title}>{project.title}</h3>
-        <p className={styles.description}>
+            }
+          }}
+        />
+      </div>
+      <div className={shared.cardContent}>
+        <h3 className={shared.cardTitle}>{project.title}</h3>
+        <p className={shared.cardDescription}>
           {renderDescription()}
           {isExpanded && (
             <button
               type='button'
               onClick={toggleDescription}
-              className={styles.readMoreButton}
+              className={`${shared.button} ${shared.buttonLink}`}
               aria-label='Show less'
             >
               Show Less
             </button>
           )}
         </p>
-        <div className={styles.technologies}>
+        <div className={shared.technologies}>
           {project.technologies.slice(0, maxTechnologies).map((tech, index) => (
-            <span key={index} className={styles.techTag}>
+            <span key={index} className={shared.techTag}>
               {tech}
             </span>
           ))}
@@ -94,11 +84,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             href={project.githubUrl}
             target='_blank'
             rel='noopener noreferrer'
-            className={styles.githubButton}
+            className={`${shared.button} ${shared.primary}`}
             aria-label={`View ${project.title} on GitHub`}
           >
-            <i className='fab fa-github'></i>
-            <span>View on GitHub</span>
+            <i className='fab fa-github' style={{ marginRight: '0.5rem' }}></i>
+            View on GitHub
           </a>
         )}
       </div>

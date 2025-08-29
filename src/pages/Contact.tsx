@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { usePortfolioData } from '../contexts';
-import ContactForm from '../components/contact/ContactForm';
+import ContactForm from '../components/ContactForm';
 import styles from '../styles/Contact.module.css';
 import sharedStyles from '../styles/Shared.module.css';
 

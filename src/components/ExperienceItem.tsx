@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './ExperienceItem.module.css';
-import { Experience } from '../../types/interfaces';
+import styles from '../styles/ExperienceItem.module.css';
+import { Experience } from '../types/interfaces';
 
 interface ExperienceItemProps {
   experience: Experience;

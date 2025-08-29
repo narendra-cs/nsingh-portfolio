@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './ContactForm.module.css';
+import styles from '../styles/ContactForm.module.css';
 
 interface ContactFormProps {
   onSubmit: (formData: { name: string; email: string; message: string }) => void;
