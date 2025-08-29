@@ -1,0 +1,96 @@
+.testimonials {
+  margin: 6rem 0;
+  width: 100%;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonialCard {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 0; /* Allows the card to shrink below content size if needed */
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.quoteIcon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.quote {
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--primary);
+  flex-grow: 1;
+  margin: 0 0 1.5rem 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limit to 5 lines max */
+  -webkit-box-orient: vertical;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.authorInfo {
+  flex: 1;
+}
+
+.authorName {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.authorTitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.linkedinIcon {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+  margin-left: 1rem;
+}
+
+.linkedinIcon:hover {
+  color: var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonialCard {
+    padding: 1.5rem;
+  }
+}
