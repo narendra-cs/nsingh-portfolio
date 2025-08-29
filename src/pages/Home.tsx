@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { usePortfolioData } from '../contexts';
 import styles from '../styles/Home.module.css';
 import shared from '../styles/Shared.module.css';
@@ -8,6 +8,30 @@ const Home: React.FC = () => {
   const title = portfolioStore.portfolioData?.title ?? '';
   const name = portfolioStore.portfolioData?.name ?? '';
   const imageUrl = portfolioStore.portfolioData?.imageUrl ?? '';
+
+  const scrollToSection = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string): void => {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        // Calculate the header height dynamically
+        const header = document.querySelector('header') ?? document.querySelector('nav');
+        const headerHeight = header?.getBoundingClientRect().height ?? 80;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerHeight;
+
+        // Smooth scroll to section with dynamic offset
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+
+        // Update URL without page reload
+        window.history.pushState({}, '', `${window.location.pathname}${href}`);
+      }
+    },
+    []
+  );
 
   return (
     <section id='home' className={`${styles.homeSection} ${shared.section}`}>
@@ -21,10 +45,18 @@ const Home: React.FC = () => {
             I build data solutions and create meaningful user experiences through code.
           </p>
           <div className={shared.ctaButtons}>
-            <a href='#about' className={`${shared.button} ${shared.primary}`}>
+            <a
+              href='#about'
+              className={`${shared.button} ${shared.primary}`}
+              onClick={(e) => scrollToSection(e, '#about')}
+            >
               Learn More
             </a>
-            <a href='#contact' className={`${shared.button} ${shared.secondary}`}>
+            <a
+              href='#contact'
+              className={`${shared.button} ${shared.secondary}`}
+              onClick={(e) => scrollToSection(e, '#contact')}
+            >
               Contact Me
             </a>
           </div>

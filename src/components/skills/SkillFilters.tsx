@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../styles/About.module.css';
+import shared from '../../styles/Shared.module.css';
 
 interface SkillFilterProps {
   categories: string[];
@@ -16,29 +17,29 @@ const SkillFilters: React.FC<SkillFilterProps> = ({
     <div className={styles.skillFilters}>
       <div className={styles.filterCheckboxes}>
         <label
-          className={`${styles.filterCheckbox} ${selectedCategories.length === 0 ? styles.active : ''}`}
+          className={`${styles.filterCheckbox} ${selectedCategories.length === 0 ? styles.active : ''} ${shared.checkboxLabel}`}
         >
           <input
             type='checkbox'
             checked={selectedCategories.length === 0}
             onChange={() => onCategoryToggle('all')}
-            className={styles.hiddenCheckbox}
+            className={shared.hiddenCheckbox}
           />
-          <span className={styles.checkboxLabel}>All Skills</span>
+          <span>All Skills</span>
         </label>
 
         {categories.map((category) => (
           <label
             key={category}
-            className={`${styles.filterCheckbox} ${selectedCategories.includes(category) ? styles.active : ''}`}
+            className={`${styles.filterCheckbox} ${selectedCategories.includes(category) ? styles.active : ''} ${shared.checkboxLabel}`}
           >
             <input
               type='checkbox'
               checked={selectedCategories.includes(category)}
               onChange={() => onCategoryToggle(category)}
-              className={styles.hiddenCheckbox}
+              className={shared.hiddenCheckbox}
             />
-            <span className={styles.checkboxLabel}>{category}</span>
+            <span>{category}</span>
           </label>
         ))}
       </div>

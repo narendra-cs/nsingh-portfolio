@@ -1,71 +1,30 @@
 @import './theme.css';
 
-.aboutSection {
-  padding: 6rem 0;
-  /* Background color removed as per user request */
-  position: relative;
-  overflow: hidden;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.aboutSection h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin: 0 auto 3rem;
-  color: var(--text-primary);
-  display: block;
-  width: 100%;
-}
-
-.aboutSection h2 {
-  position: relative;
-  padding-bottom: 1rem;
-  display: inline-block;
-  margin: 0 auto 3rem;
-  text-align: center;
-  width: auto;
-}
-
-.aboutSection h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: 2px;
-}
-
 .aboutContent {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   margin-top: 2rem;
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1200px;
 }
 
 .aboutText {
-  line-height: 1.8;
   color: var(--text-secondary);
   font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .aboutText p {
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem;
   line-height: 1.8;
-  text-align: justify;
+  text-align: left;
   text-justify: inter-word;
+  width: 100%;
 }
 
 .skills {
@@ -73,7 +32,6 @@
   width: 100%;
 }
 
-/* Skill Filters */
 .skillFilters {
   margin-bottom: 1.5rem;
   width: 100%;
@@ -125,26 +83,6 @@
   margin: 1.5rem 0;
   border: none;
   width: 100%;
-}
-
-.hiddenCheckbox {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.checkboxLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.skills h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-primary);
-  text-align: center;
 }
 
 .skillsGrid {
@@ -215,10 +153,6 @@
 @media (min-width: 1024px) {
   .aboutSection {
     padding: 8rem 0;
-  }
-  
-  .container {
-    padding: 0 2rem;
   }
   
   .skillsGrid {

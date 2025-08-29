@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import styles from '../../styles/Navbar.module.css';
 import { navbarLinks } from './Constants';
@@ -16,7 +15,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('home');
   const [isMobileView, setIsMobileView] = useState<boolean>(false);
-  const location = useLocation();
   const navRef = useRef<HTMLElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,20 +22,20 @@ const Navbar = () => {
   // Check if navigation links fit in the container
   const checkNavFit = useCallback(() => {
     if (!containerRef.current || !navLinksRef.current) return;
-    
+
     const container = containerRef.current;
     const navLinks = navLinksRef.current;
-    
+
     // Check if nav links overflow the container
     const containerWidth = container.offsetWidth;
     const navLinksWidth = Array.from(navLinks.children).reduce((width, child) => {
       return width + (child as HTMLElement).offsetWidth;
     }, 0);
-    
+
     // Add some padding for the menu button
     const menuButtonWidth = 60; // Approximate width of menu button + margin
-    const shouldShowMobileMenu = navLinksWidth > (containerWidth - menuButtonWidth);
-    
+    const shouldShowMobileMenu = navLinksWidth > containerWidth - menuButtonWidth;
+
     setIsMobileView(shouldShowMobileMenu || window.innerWidth <= 768);
   }, []);
 
@@ -48,17 +46,17 @@ const Navbar = () => {
     // Find which section is currently in view
     const sections = document.querySelectorAll('section[id]');
     let currentSection = 'home';
-    
-    sections.forEach(section => {
+
+    sections.forEach((section) => {
       const sectionElement = section as HTMLElement;
       const sectionTop = sectionElement.offsetTop - 100;
       const sectionHeight = sectionElement.offsetHeight;
-      
+
       if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
         currentSection = section.id || 'home';
       }
     });
-    
+
     setActiveSection(currentSection);
   }, []);
 
@@ -71,7 +69,7 @@ const Navbar = () => {
     // Add event listeners
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', checkNavFit);
-    
+
     // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -105,7 +103,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const toggleMenu = useCallback((): void => {
-    setIsMenuOpen(prev => {
+    setIsMenuOpen((prev) => {
       document.body.style.overflow = !prev ? 'hidden' : '';
       return !prev;
     });
@@ -116,41 +114,52 @@ const Navbar = () => {
     document.body.style.overflow = '';
   }, []);
 
-  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string): void => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      // Close mobile menu if open
-      if (isMenuOpen) {
-        closeMenu();
+  const scrollToSection = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string): void => {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        // Close mobile menu if open
+        if (isMenuOpen) {
+          closeMenu();
+        }
+
+        // Calculate the header height dynamically
+        const header = document.querySelector('header') ?? document.querySelector('nav');
+        const headerHeight = header?.getBoundingClientRect().height ?? 80;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerHeight;
+
+        // Smooth scroll to section with dynamic offset
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+
+        // Update URL without page reload
+        window.history.pushState({}, '', `${window.location.pathname}${href}`);
       }
-
-      // Smooth scroll to section with offset for fixed header
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.pageYOffset - 80,
-        behavior: 'smooth',
-      });
-
-      // Update URL without page reload
-      window.history.pushState({}, '', `${window.location.pathname}${href}`);
-    }
-  }, [isMenuOpen, closeMenu]);
+    },
+    [isMenuOpen, closeMenu]
+  );
 
   // Filter out the Home link since it's already in the logo
   const navLinks: NavLink[] = navbarLinks.navbar_links
     .filter((link) => link.name !== 'Home')
-    .map(link => ({
+    .map((link) => ({
       ...link,
-      isActive: activeSection === link.href.substring(1) // Remove '#' for comparison
+      isActive: activeSection === link.href.substring(1), // Remove '#' for comparison
     }));
 
   return (
     <nav
       ref={navRef}
       className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''} ${isMenuOpen ? styles.menuOpen : ''}`}
-      style={{
-        '--scroll-position': isScrolled ? 1 : 0,
-      } as React.CSSProperties}
+      style={
+        {
+          '--scroll-position': isScrolled ? 1 : 0,
+        } as React.CSSProperties
+      }
     >
       <div className={styles.container}>
         <a
@@ -169,7 +178,7 @@ const Navbar = () => {
               isMobileView && !isMenuOpen ? styles.hidden : ''
             }`}
             aria-hidden={isMobileView && !isMenuOpen}
-            role="menu"
+            role='menu'
           >
             {navLinks.map((link) => (
               <a

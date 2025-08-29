@@ -1,5 +1,39 @@
 @import './theme.css';
 
+.section {
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionContent {
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .sectionHeading {
   position: relative;
   padding-bottom: 1rem;
@@ -23,43 +57,26 @@
   border-radius: 2px;
 }
 
-/* Centered container for section content */
-.sectionContent {
-  margin: 0 auto;
-  padding: 0 2rem;
+.sectionSubHeading {
   position: relative;
-  z-index: 1;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  margin: 0 auto 2rem;
+  text-align: center;
+  width: auto;
+  color: var(--text-primary);
 }
 
-/* Common section styling */
-.section {
-  padding: 2rem 0;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Common Layout */
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  width: 100%;
-}
-
-.content {
-  flex: 1;
-  max-width: 600px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  margin: 0 auto;
-  padding: 0 1rem;
+.sectionSubHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
 }
 
 /* Common Typography */
@@ -166,6 +183,22 @@
   color: var(--primary);
 }
 
+/* Form Elements */
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .container {
@@ -203,9 +236,6 @@
 }
 
 @media (min-width: 1024px) {
-  .section {
-    padding: 6rem 0;
-  }
   
   .sectionContent {
     padding: 0 2rem;

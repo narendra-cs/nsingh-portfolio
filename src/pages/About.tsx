@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { usePortfolioData } from '../contexts';
 import styles from '../styles/About.module.css';
-import sharedStyles from '../styles/Shared.module.css';
+import shared from '../styles/Shared.module.css';
 import SkillFilters from '../components/skills/SkillFilters';
 import SkillIcon from '../components/skills/SkillIcon'; // Updated import path
 
@@ -59,10 +59,10 @@ const About: React.FC = () => {
   };
 
   return (
-    <section id='about' className={sharedStyles.section}>
-      <div className={sharedStyles.sectionContent}>
-        <h2 className={sharedStyles.sectionHeading}>About Me</h2>
-        <div className={styles.aboutContent}>
+    <section id='about' className={shared.section}>
+      <div className={shared.sectionContent}>
+        <h2 className={shared.sectionHeading}>About Me</h2>
+        <div className={`${shared.content} ${styles.aboutContent}`}>
           <div className={styles.aboutText}>
             {portfolioStore.portfolioData.about.length > 0 ? (
               portfolioStore.portfolioData.about.map((about, index) => (
@@ -75,14 +75,14 @@ const About: React.FC = () => {
             )}
           </div>
           <div className={styles.skills}>
-            <h3>Skills</h3>
+            <h3 className={shared.sectionSubHeading}>Skills</h3>
             <SkillFilters
               categories={allCategories}
               selectedCategories={selectedCategories}
               onCategoryToggle={handleCategoryToggle}
             />
             <div className={styles.skillsDivider}></div>
-            <div className={styles.skillsGrid}>
+            <div className={`${shared.grid} ${styles.skillsGrid}`}>
               {filteredSkills.length > 0 ? (
                 filteredSkills.map((skill, index) => (
                   <div key={`${skill.name}-${index}`} className={styles.skillTag}>

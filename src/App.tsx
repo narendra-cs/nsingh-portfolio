@@ -44,9 +44,7 @@ const AppContent: React.FC = observer(() => {
       <Navbar />
       <main className='main-content'>
         {navbarLinks.navbar_links.map((link) => (
-          <div id={link.name.toLowerCase()} key={`${link.name.toLowerCase()}`}>
-            <link.component />
-          </div>
+          <link.component />
         ))}
       </main>
     </div>

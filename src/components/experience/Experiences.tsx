@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { usePortfolioData } from '../../contexts';
 import ExperienceItem from './ExperienceItem';
 import styles from './Experiences.module.css';
+import shared from '../../styles/Shared.module.css';
 
 const Experiences: React.FC = observer(() => {
   const { portfolioData } = usePortfolioData();
@@ -17,9 +18,9 @@ const Experiences: React.FC = observer(() => {
   });
 
   return (
-    <section id="experience" className={styles.experienceSection}>
-      <div className="container">
-        <h2 className="section-heading">Professional Experience</h2>
+    <section id='experience' className={shared.section}>
+      <div className={shared.sectionContent}>
+        <h2 className={shared.sectionHeading}>Professional Experience</h2>
         <div className={styles.experienceList}>
           {sortedExperiences.map((exp, index) => {
             const isLast = index === sortedExperiences.length - 1;
