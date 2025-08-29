@@ -34,10 +34,10 @@ const Contact: React.FC = () => {
   return (
     <section id='contact' className={`${shared.section} ${styles.contactSection}`}>
       <div className={shared.sectionContent}>
-        <h2 className={shared.sectionHeading}>Get In Touch</h2>
+        <h2 className={shared.sectionHeading}>Let’s Connect!</h2>
         <div className={`${shared.container} ${styles.contactContent}`}>
           <div className={`${shared.content} ${styles.contactInfo}`}>
-            <p className={styles.contactMessage}>{contactDetails.message}</p>
+            <p className={shared.description}>{contactDetails.message}</p>
 
             <div className={shared.socialLinks}>
               {socialLinks.map((social, index) => (

@@ -4,6 +4,7 @@ import styles from '../styles/About.module.css';
 import shared from '../styles/Shared.module.css';
 import SkillFilters from '../components/SkillFilters';
 import Icon from '../components/common/Icon';
+import ReactMarkdown from 'react-markdown';
 
 const About: React.FC = () => {
   const portfolioStore = usePortfolioData();
@@ -65,10 +66,16 @@ const About: React.FC = () => {
         <div className={`${shared.content} ${styles.aboutContent}`}>
           <div className={styles.aboutText}>
             {portfolioStore.portfolioData.about.length > 0 ? (
-              portfolioStore.portfolioData.about.map((about, index) => (
-                <p key={index}>
-                  {index === 0 ? 'Hello! ' : ''} {about}
-                </p>
+              portfolioStore.portfolioData.about.map((paragraph, idx) => (
+                <div key={idx} className={shared.markdownContainer}>
+                  <ReactMarkdown
+                    components={{
+                      strong: ({ ...props }) => <strong className={shared.highlight} {...props} />,
+                    }}
+                  >
+                    {paragraph}
+                  </ReactMarkdown>
+                </div>
               ))
             ) : (
               <p>Hello! Welcome to my portfolio.</p>

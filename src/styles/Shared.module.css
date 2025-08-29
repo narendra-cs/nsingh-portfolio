@@ -187,7 +187,9 @@
 
 .highlight {
   color: var(--primary);
+  font-weight: 600;
   position: relative;
+  padding: 0 2px;
   display: inline-block;
 }
 

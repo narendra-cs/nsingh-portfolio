@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { usePortfolioData } from '../contexts';
 import styles from '../styles/Home.module.css';
 import shared from '../styles/Shared.module.css';
+import ReactMarkdown from 'react-markdown';
 
 const Home: React.FC = () => {
   const portfolioStore = usePortfolioData();
@@ -41,9 +42,15 @@ const Home: React.FC = () => {
             Hi, I'm <span className={shared.highlight}>{name}</span>
           </h1>
           <h2 className={shared.subtitle}>{title && <>{title} & </>}Tech Enthusiast</h2>
-          <p className={shared.description}>
-            I build data solutions and create meaningful user experiences through code.
-          </p>
+          <div className={shared.markdownContainer}>
+            <ReactMarkdown
+              components={{
+                strong: ({ ...props }) => <strong className={shared.highlight} {...props} />,
+              }}
+            >
+              I build **data solutions** and create meaningful user experiences through **code**.
+            </ReactMarkdown>
+          </div>
           <div className={shared.ctaButtons}>
             <a
               href='#about'

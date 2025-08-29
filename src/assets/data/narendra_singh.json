@@ -3,8 +3,7 @@
   "title": "Data Engineer",
   "imageUrl": "/images/narendra_singh.jpg",
   "about": [
-    "I'm a passionate Data Engineer with experience in Data Engineering and Data Science. I love turning ideas into reality through clean, efficient code.",
-    "My journey in software development started with a curiosity about how things work, and it has grown into a career where I get to solve complex problems every day."
+    "I'm a Data Engineer focused on building **scalable, high-performance data platforms** that enable reliable and efficient data-driven decision making. I design and implement **end-to-end data solutions** — from real-time and batch **ETL pipelines** to optimized **data lakes** — using tools like **Apache Spark**, **Delta Lake**, **Iceberg**, and **Airflow**. With experience across cloud environments such as **AWS**, **Azure**, and **Tencent Cloud**, I create data systems that are robust, flexible, and built for scale."
   ],
   "skills": [
     {
@@ -332,26 +331,21 @@
     }
   ],
   "contactDetails": {
-    "message": "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!",
+    "message": "Whether you have a question, a project idea, or just want to say hello — I’d love to hear from you. Feel free to reach out, and I’ll get back to you as soon as possible. Thanks for stopping by!",
     "socialLinks": [
       {
         "name": "GitHub",
-        "url": "https://github.com/yourusername",
+        "url": "https://github.com/narendra-cs",
         "icon": "fab fa-github"
       },
       {
         "name": "LinkedIn",
-        "url": "https://linkedin.com/in/yourusername",
+        "url": "https://www.linkedin.com/in/narendra-cs/",
         "icon": "fab fa-linkedin"
       },
       {
-        "name": "Twitter",
-        "url": "https://twitter.com/yourusername",
-        "icon": "fab fa-twitter"
-      },
-      {
         "name": "Email",
-        "url": "mailto:your.email@example.com",
+        "url": "mailto:narendra.cs.biet@gmail.com",
         "icon": "fas fa-envelope"
       }
     ]
