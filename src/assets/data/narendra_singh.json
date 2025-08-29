@@ -239,7 +239,7 @@
     {
       "title": "Senior Data Engineer",
       "company": "Thoughtworks",
-      "startDate": "2022-01-01",
+      "startDate": "2023-12-04",
       "endDate": null,
       "location": "Pune, India",
       "description": "I was a Data Engineer at Thoughtworks where I was responsible for building data pipelines and data models.",
@@ -250,8 +250,53 @@
         "Airflow",
         "AWS",
         "Python",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Data Engineer",
+      "company": "Xoriant Solutions",
+      "startDate": "2022-01-01",
+      "endDate": "2023-12-04",
+      "location": "Pune, India",
+      "description": "I was a Data Engineer at Xoriant Solutions where I was responsible for building data pipelines and data models.",
+      "technologies": [
+        "Spark",
+        "Kafka",
+        "Airflow",
+        "AWS",
+        "Python",
+        "Scala",
         "SQL",
+        "Kudu"
+      ]
+    },
+    {
+      "title": "SOC Engineer",
+      "company": "Qualys Inc.",
+      "startDate": "2020-01-01",
+      "endDate": "2021-12-31",
+      "location": "Pune, India",
+      "description": "I was a SOC Engineer at Qualys Inc. where I was responsible for building data pipelines and data models.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Bash",
+        "Logstash",
+        "Kibana",
+        "Elasticsearch",
+        "Clickhouse",
+        "AWS",
+        "GCP",
+        "Azure",
+        "Tencent",
+        "Airflow",
+        "Spark",
+        "Databricks",
+        "Kafka",
         "Hive",
+        "MySQL",
+        "Postgres",
         "SQL/NoSQL"
       ]
     }

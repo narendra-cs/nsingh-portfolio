@@ -20,7 +20,7 @@ export interface PortfolioData {
   skills: Skill[];
   projects: Project[];
   contactDetails: ContactDetails;
-  professionalExperience: ProfessionalExperience[];
+  professionalExperience: Experience[];
   certifications: Certification[];
   testimonials: Testimonial[];
 }
@@ -52,7 +52,7 @@ export interface ContactDetails {
   socialLinks: SocialLink[];
 }
 
-export interface ProfessionalExperience {
+export interface Experience {
   title: string;
   company: string;
   startDate: string;

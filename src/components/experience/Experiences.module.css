@@ -1,0 +1,47 @@
+.experienceSection {
+  padding: 4rem 0;
+  background-color: var(--bg-primary);
+}
+
+.experienceList {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sectionHeading::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .experienceSection {
+    padding: 3rem 0;
+  }
+  
+  .sectionHeading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .experienceList {
+    padding: 1rem 0.5rem;
+  }
+}
