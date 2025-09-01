@@ -30,8 +30,23 @@ test-coverage:
 dev:
 	npm run dev
 
+# Clean build artifacts
+clean:
+	npm run clean
+
+# Clean everything including node_modules
+clean-all:
+	npm run clean:all
+
+# Install dependencies
+install:
+	npm install
+
+# Rebuild from scratch
+rebuild: clean install build
+
 # Build for production
-build:
+build: clean
 	npm run build
 
 # Default target

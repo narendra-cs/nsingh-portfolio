@@ -3,7 +3,7 @@
   "title": "Data Engineer",
   "imageUrl": "/images/narendra_singh.jpg",
   "about": [
-    "I'm a Data Engineer focused on building **scalable, high-performance data platforms** that enable reliable and efficient data-driven decision making. I design and implement **end-to-end data solutions** — from real-time and batch **ETL pipelines** to optimized **data lakes** — using tools like **Apache Spark**, **Delta Lake**, **Iceberg**, and **Airflow**. With experience across cloud environments such as **AWS**, **Azure**, and **Tencent Cloud**, I create data systems that are robust, flexible, and built for scale."
+    "I'm a Data Engineer focused on building **scalable**, **high-performance** **data** **platforms** that enable reliable and efficient data-driven decision making. I design and implement **end-to-end** **data** **solutions** — from real-time and batch **ETL pipelines** to optimized **data lakes** — using tools like **Apache Spark**, **Delta Lake**, **Iceberg**, and **Airflow**. With experience across cloud environments such as **AWS**, **Azure**, and **Tencent Cloud**, I create data systems that are robust, flexible, and built for scale."
   ],
   "skills": [
     {
