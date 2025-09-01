@@ -268,6 +268,186 @@
   text-decoration: none;
 }
 
+.footer {
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  padding: 1.5rem 0 1rem;
+}
+
+.footerContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footerSections {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+
+  /* Stack sections on small screens */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Align first section to the start */
+.footerSection:first-child {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Align last section to the end */
+.footerSection:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Center the social links in their container */
+.footerSection:last-child .socialLinks {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Base footer heading style */
+.footerHeading {
+  color: var(--text-inverse);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Left-aligned heading (default) */
+.footerSection:first-child .footerHeading {
+  text-align: left;
+}
+
+/* Right-aligned heading for social links */
+.footerSection:last-child .footerHeading {
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Center align everything on mobile */
+@media (max-width: 768px) {
+  .footerSection {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .footerHeading {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+  }
+
+  .footerSection:last-child .footerHeading {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footerSection:last-child .socialLinks {
+    justify-content: center !important;
+  }
+
+  /* Center align the underline on mobile */
+  .footerHeading::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+  }
+
+  .footerLinks {
+    text-align: center;
+  }
+
+  .footerLink {
+    justify-content: center;
+  }
+}
+
+/* Underline that matches text width */
+.footerHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform: none;
+}
+
+/* Right-aligned underline for social links heading */
+.footerSection:last-child .footerHeading::after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 0.5rem;
+}
+
+.footerLink,
+.footerLink:visited,
+.footerLink:hover,
+.footerLink:active {
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.socialLink {
+  color: var(--text-inverse);
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.socialLink:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-inverse);
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
 .secondary {
   background-color: transparent;
   color: var(--primary);

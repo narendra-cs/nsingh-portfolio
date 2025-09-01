@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
 import { navbarLinks } from './components/common/Constants';
 import { usePortfolioData } from './contexts/';
 import { PortfolioDataProvider } from './contexts/PortfolioDataContext';
@@ -40,13 +41,14 @@ const AppContent: React.FC = observer(() => {
   }
 
   return (
-    <div className='app'>
+    <div className='app' style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar />
-      <main className='main-content'>
+      <main className='main-content' style={{ flex: 1 }}>
         {navbarLinks.navbar_links.map((link) => (
-          <link.component />
+          <link.component key={link.name} />
         ))}
       </main>
+      <Footer />
     </div>
   );
 });
