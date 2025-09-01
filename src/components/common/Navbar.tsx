@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { FaTimes, FaBars } from 'react-icons/fa';
 import ThemeToggle from './ThemeToggle';
 import styles from '../../styles/Navbar.module.css';
 import { navbarLinks } from './Constants';
@@ -14,7 +15,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('home');
-  const [isMobileView, setIsMobileView] = useState<boolean>(false);
   const navRef = useRef<HTMLElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,21 +22,6 @@ const Navbar = () => {
   // Check if navigation links fit in the container
   const checkNavFit = useCallback(() => {
     if (!containerRef.current || !navLinksRef.current) return;
-
-    const container = containerRef.current;
-    const navLinks = navLinksRef.current;
-
-    // Check if nav links overflow the container
-    const containerWidth = container.offsetWidth;
-    const navLinksWidth = Array.from(navLinks.children).reduce((width, child) => {
-      return width + (child as HTMLElement).offsetWidth;
-    }, 0);
-
-    // Add some padding for the menu button
-    const menuButtonWidth = 60; // Approximate width of menu button + margin
-    const shouldShowMobileMenu = navLinksWidth > containerWidth - menuButtonWidth;
-
-    setIsMobileView(shouldShowMobileMenu || window.innerWidth <= 768);
   }, []);
 
   const handleScroll = useCallback(() => {
@@ -124,20 +109,23 @@ const Navbar = () => {
           closeMenu();
         }
 
-        // Calculate the header height dynamically
-        const header = document.querySelector('header') ?? document.querySelector('nav');
-        const headerHeight = header?.getBoundingClientRect().height ?? 80;
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerHeight;
+        // Small delay to ensure menu is closed before scrolling
+        setTimeout(() => {
+          // Calculate the header height dynamically
+          const header = document.querySelector('header') ?? document.querySelector('nav');
+          const headerHeight = header?.getBoundingClientRect().height ?? 80;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = Math.max(0, elementPosition - headerHeight);
 
-        // Smooth scroll to section with dynamic offset
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
+          // Smooth scroll to section with dynamic offset
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
 
-        // Update URL without page reload
-        window.history.pushState({}, '', `${window.location.pathname}${href}`);
+          // Update URL without page reload
+          window.history.pushState({}, '', `${window.location.pathname}${href}`);
+        }, 50);
       }
     },
     [isMenuOpen, closeMenu]
@@ -152,80 +140,73 @@ const Navbar = () => {
     }));
 
   return (
-    <nav
-      ref={navRef}
-      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''} ${isMenuOpen ? styles.menuOpen : ''}`}
-      style={
-        {
-          '--scroll-position': isScrolled ? 1 : 0,
-        } as React.CSSProperties
-      }
-    >
-      <div className={styles.container}>
-        <a
-          href='#home'
-          className={styles.logo}
-          onClick={(e) => scrollToSection(e, '#home')}
-          aria-label='Home'
-        >
-          Narendra Singh
-        </a>
+    <>
+      <nav
+        ref={navRef}
+        className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''} ${
+          isMenuOpen ? styles.menuOpen : ''
+        }`}
+      >
+        <div className={styles.container} ref={containerRef}>
+          <a
+            href='#home'
+            className={styles.logo}
+            onClick={(e) => {
+              scrollToSection(e, '#home');
+              setIsMenuOpen(false);
+            }}
+            aria-label='Home'
+          >
+            NS
+          </a>
 
-        <div className={styles.navRight} ref={containerRef}>
           <div
             ref={navLinksRef}
-            className={`${styles.navLinks} ${isMenuOpen ? styles.showMenu : ''} ${
-              isMobileView && !isMenuOpen ? styles.hidden : ''
-            }`}
-            aria-hidden={isMobileView && !isMenuOpen}
-            role='menu'
+            className={`${styles.navLinks} ${isMenuOpen ? styles.showMenu : ''}`}
+            id='main-navigation'
+            aria-hidden={!isMenuOpen}
           >
             {navLinks.map((link) => (
               <a
-                key={link.href}
+                key={link.name}
                 href={link.href}
-                className={`${styles.navLink} ${link.isActive ? styles.active : ''}`}
+                className={`${styles.navLink} ${
+                  activeSection === link.href.substring(1) ? styles.active : ''
+                }`}
                 onClick={(e) => {
                   scrollToSection(e, link.href);
                   setIsMenuOpen(false);
                 }}
+                tabIndex={isMenuOpen ? 0 : -1}
               >
                 {link.icon && <i className={`${link.icon} ${styles.navIcon}`}></i>}
                 <span>{link.name}</span>
               </a>
             ))}
-            {/* <a
-              href='/resume.pdf'
-              target='_blank'
-              rel='noopener noreferrer'
-              className={styles.resumeButton}
-            >
-              <i className='fa-solid fa-file-pdf'></i>
-              <span>Resume</span>
-            </a> */}
             <div className={styles.themeToggleContainer}>
               <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile menu button */}
-          {(isMobileView || window.innerWidth <= 768) && (
-            <button
-              type='button'
-              className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`}
-              onClick={toggleMenu}
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMenuOpen}
-              aria-controls='main-navigation'
-            >
-              <span aria-hidden='true'></span>
-              <span aria-hidden='true'></span>
-              <span aria-hidden='true'></span>
-            </button>
-          )}
+          <button
+            type='button'
+            className={styles.menuButton}
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls='main-navigation'
+          >
+            {isMenuOpen ? (
+              <FaTimes className={styles.closeIcon} />
+            ) : (
+              <FaBars className={styles.hamburgerIcon} />
+            )}
+          </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+      {isMenuOpen && <div className={styles.menuOverlay} onClick={toggleMenu} />}
+    </>
   );
 };
 
