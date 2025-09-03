@@ -55,6 +55,8 @@ export interface ContactDetails {
 export interface Experience {
   title: string;
   company: string;
+  companyUrl: string;
+  companyLogo: string;
   startDate: string;
   endDate: string | null;
   location: string;

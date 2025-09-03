@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from '../styles/ExperienceItem.module.css';
+import { ThemeContext } from '../contexts/Context';
 import { Experience } from '../types/interfaces';
 
 interface ExperienceItemProps {
@@ -14,6 +15,9 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
     return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   };
 
+  const themeContext = useContext(ThemeContext);
+  const theme = themeContext?.theme ?? 'light';
+
   return (
     <div className={`${styles.experienceItem} ${!isLast ? styles.withTimeline : ''}`}>
       {isLast && <div className={styles.timelineLineTop} />}
@@ -24,7 +28,23 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, isLast }) =
         <h3 className={styles.jobTitle}>{experience.title}</h3>
         <div className={styles.companyInfo}>
           <div className={styles.companyDetails}>
-            <span className={styles.companyName}>{experience.company}</span>
+            <a
+              href={experience.companyUrl}
+              target='_blank'
+              rel='noopener noreferrer'
+              className={styles.companyLink}
+              data-theme={theme}
+            >
+              {theme === 'light' && experience.companyLogo ? (
+                <img
+                  src={experience.companyLogo}
+                  alt={experience.company}
+                  className={styles.companyLogo}
+                />
+              ) : (
+                <span className={styles.companyName}>{experience.company}</span>
+              )}
+            </a>
             <span className={styles.location}>
               <i className='fas fa-map-marker-alt'></i> {experience.location}
             </span>

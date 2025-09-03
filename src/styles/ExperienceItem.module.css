@@ -75,11 +75,51 @@
   color: var(--text-secondary);
 }
 
-.companyName {
+/* .companyName {
   font-weight: 500;
   color: var(--primary);
   font-size: 1rem;
   margin-right: 0.5rem;
+} */
+
+/* Company link container */
+.companyLink {
+  display: inline-block;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  height: 24px; /* Fixed height for all logos */
+  line-height: 24px; /* Match height for text alignment */
+  vertical-align: middle;
+}
+
+/* Company logo style */
+.companyLogo {
+  height: 100%;
+  width: auto;
+  max-width: 120px; /* Maximum width to prevent logos from being too wide */
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* Company name style (shown in dark theme) */
+.companyName {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Ensure consistent styling for all link states */
+.companyLink,
+.companyLink:link,
+.companyLink:visited,
+.companyLink:hover,
+.companyLink:focus,
+.companyLink:active {
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
 }
 
 .location {
