@@ -2,8 +2,8 @@
 
 /* Base section styles - applied to all sections */
 .section {
-  scroll-margin-top: 80px; /* Match navbar height */
-  padding: 3rem 0 2rem; /* Reduced top and bottom padding */
+  scroll-margin-top: 80px;
+  padding: 2rem 0;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -58,7 +58,7 @@
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .section {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
   }
 
   .sectionContent {
@@ -72,7 +72,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     scroll-margin-top: 70px;
   }
 
@@ -88,7 +88,7 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 1.75rem 0;
+    padding: 1rem 0;
   }
 
   .sectionContent {
