@@ -300,27 +300,6 @@
       ]
     }
   ],
-  "certifications": [
-    {
-      "title": "Data Engineer",
-      "provider": "Thoughtworks",
-      "startDate": "2022-01-01",
-      "endDate": null,
-      "description": "",
-      "technologies": [
-        "Spark",
-        "Databricks",
-        "Kafka",
-        "Airflow",
-        "AWS",
-        "Python",
-        "SQL",
-        "Hive",
-        "SQL/NoSQL"
-      ],
-      "credentialUrl": ""
-    }
-  ],
   "testimonials": [
     {
       "name": "John Doe",

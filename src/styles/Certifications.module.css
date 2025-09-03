@@ -51,13 +51,43 @@
   border: 1px solid var(--border-color);
   width: 380px;
   flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.certificationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .certificationCard:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   z-index: 2;
+  border-color: var(--primary);
+}
+
+.certificationCard:hover::before {
+  opacity: 0.05;
+}
+
+[data-theme='dark'] .certificationCard:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary);
+}
+
+[data-theme='dark'] .certificationCard {
+  background: var(--card-bg);
+  border-color: var(--border-color);
 }
 
 .certificationIcon {

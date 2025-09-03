@@ -48,11 +48,10 @@
 }
 
 .testimonialCard {
-  background: var(--card-bg);
+  background: transparent;
   border-radius: 8px;
   padding: 1.5rem;
   position: relative;
-  border: 1px solid var(--border-color);
   width: 320px;
   min-width: 320px;
   max-width: calc(100vw - 4rem);
@@ -65,13 +64,51 @@
   scroll-snap-align: start;
   height: auto;
   min-height: 200px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Apply background and border only in dark theme by default */
+[data-theme='dark'] .testimonialCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonialCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .testimonialCard:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-4px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+  z-index: 2;
+}
+
+.testimonialCard:hover::before {
+  opacity: 0.05;
+}
+
+[data-theme='dark'] .testimonialCard:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary);
+}
+
+[data-theme='dark'] .testimonialCard {
+  background: var(--card-bg);
+  border-color: var(--border-color);
 }
 
 .quoteIcon {

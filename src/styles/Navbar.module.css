@@ -406,7 +406,7 @@
 
 /* Menu open state */
 .navbar.menuOpen {
-  background-color: var(--primary) !important;
+  background-color: var(--bg-primary) !important;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   height: auto;
@@ -418,7 +418,19 @@
 }
 
 [data-theme='dark'] .navbar.menuOpen {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Light theme specific menu styles */
+[data-theme='light'] .navbar.menuOpen {
   background-color: var(--primary) !important;
+  border-bottom: 1px solid var(--primary-dark);
+}
+
+[data-theme='light'] .navbar.scrolled {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
 }
 
 /* Media Queries */
@@ -434,7 +446,6 @@
     right: 0;
     width: 100%;
     max-width: 100%;
-    background-color: var(--primary);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -446,6 +457,17 @@
     transform: translateY(-20px);
     max-height: 0;
     overflow: hidden;
+  }
+
+  /* Light theme nav links */
+  [data-theme='light'] .navLinks {
+    background-color: var(--primary);
+    border-top: 1px solid var(--primary-dark);
+  }
+
+  /* Dark theme nav links */
+  [data-theme='dark'] .navLinks {
+    background-color: var(--bg-secondary);
   }
 
   .navLinks.showMenu {
@@ -460,7 +482,7 @@
     width: 100%;
     text-align: center;
     padding: 1rem 2rem;
-    color: var(--white) !important;
+    color: var(--text-primary) !important;
     font-size: 1.1rem;
     opacity: 0.9;
     margin: 0.25rem auto;
@@ -470,11 +492,29 @@
     text-align: center;
   }
 
+  [data-theme='light'] .navLink {
+    color: var(--white) !important;
+  }
+
+  [data-theme='dark'] .navLink {
+    color: var(--text-inverse) !important;
+  }
+
   .navLink:hover,
   .navLink.active {
-    color: var(--white) !important;
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme='light'] .navLink:hover,
+  [data-theme='light'] .navLink.active {
+    background-color: var(--primary-dark);
+    color: var(--white) !important;
+  }
+
+  [data-theme='dark'] .navLink:hover,
+  [data-theme='dark'] .navLink.active {
+    background-color: var(--primary);
+    color: var(--white) !important;
   }
 
   .navLink::after {

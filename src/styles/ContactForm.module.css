@@ -1,10 +1,21 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 650px;
+  max-width: 450px; /* Reduced from 650px */
   margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--card-bg, #fff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .form {
+  background: #1e293b; /* Dark slate blue-gray */
+  border: 1px solid #334155; /* Slightly lighter border */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
 }
 
 .formGroup {
@@ -18,19 +29,43 @@
 
 .formGroup label {
   font-weight: 500;
-  color: #2c3e50;
+  color: var(--text-primary);
   font-size: 0.95rem;
+}
+
+[data-theme='dark'] .formGroup label {
+  color: var(--text-secondary);
 }
 
 .formControl {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color, #ddd);
   border-radius: 6px;
   font-size: 1rem;
   transition: all 0.3s ease;
   width: 100%;
-  background-color: transparent;
+  background-color: var(--form-bg, #fff);
   color: var(--text-primary);
+}
+
+[data-theme='dark'] .formControl {
+  background-color: #0f172a; /* Darker slate */
+  border: 1px solid #334155; /* Soft blue-gray border */
+  color: #e2e8f0; /* Light gray text */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] .formControl:focus {
+  background-color: #0f172a;
+  border-color: #60a5fa; /* Brighter blue for focus */
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+  outline: none;
+}
+
+[data-theme='dark'] .formControl:focus {
+  border-color: var(--primary);
+  background-color: var(--card-bg);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.2);
 }
 
 .formControl::placeholder {
@@ -73,6 +108,26 @@
   transform-origin: left top;
   opacity: 0;
   z-index: 1;
+}
+
+/* Dark theme floating label styles */
+[data-theme='dark'] .floatingLabel {
+  background: var(--bg-secondary);
+  color: var(--primary);
+  font-weight: 500;
+  padding: 0 0.5rem;
+  left: 0.5rem;
+  /* text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
+}
+
+[data-theme='dark'] .formControl:focus + .floatingLabel,
+[data-theme='dark'] .formControl:not(:placeholder-shown) + .floatingLabel {
+  background: var(--bg-secondary);
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0 0.5rem;
+  left: 0.5rem;
+  text-shadow: none;
 }
 
 /* Hide the placeholder when the floating label is shown */
