@@ -1,13 +1,25 @@
 @import './theme.css';
 
+/* Base section styles - applied to all sections */
 .section {
-  scroll-margin-top: 80px; /* Height of your navbar */
-  padding: 2rem 0;
+  scroll-margin-top: 80px; /* Match navbar height */
+  padding: 3rem 0 2rem; /* Reduced top and bottom padding */
   width: 100%;
   position: relative;
   overflow: hidden;
-  align-items: center;
-  min-height: calc(100vh - 80px);
+  min-height: auto;
+  box-sizing: border-box;
+}
+
+/* Section content container */
+.sectionContent {
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sectionContent {
@@ -15,6 +27,78 @@
   padding: 0 2rem;
   position: relative;
   z-index: 1;
+  max-width: 1400px; /* Match home section max-width */
+  width: 100%;
+}
+
+/* Section heading styles */
+.sectionTitle {
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  position: relative;
+  font-size: 2.25rem;
+  color: var(--text-primary);
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.sectionTitle:hover::after {
+  width: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .sectionContent {
+    padding: 0 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+    scroll-margin-top: 70px;
+  }
+
+  .sectionContent {
+    padding: 0 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 1.75rem 0;
+  }
+
+  .sectionContent {
+    padding: 0 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .container {

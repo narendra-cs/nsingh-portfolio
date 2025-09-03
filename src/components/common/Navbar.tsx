@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { scrollToSection } from '../../utils/scrollUtils';
 import { FaTimes, FaBars } from 'react-icons/fa';
 import ThemeToggle from './ThemeToggle';
 import styles from '../../styles/Navbar.module.css';
@@ -99,33 +100,17 @@ const Navbar = () => {
     document.body.style.overflow = '';
   }, []);
 
-  const scrollToSection = useCallback(
+  const handleScrollToSection = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string): void => {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        // Close mobile menu if open
-        if (isMenuOpen) {
-          closeMenu();
-        }
-
+      // Close mobile menu if open
+      if (isMenuOpen) {
+        closeMenu();
         // Small delay to ensure menu is closed before scrolling
         setTimeout(() => {
-          // Calculate the header height dynamically
-          const header = document.querySelector('header') ?? document.querySelector('nav');
-          const headerHeight = header?.getBoundingClientRect().height ?? 80;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = Math.max(0, elementPosition - headerHeight);
-
-          // Smooth scroll to section with dynamic offset
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-          });
-
-          // Update URL without page reload
-          window.history.pushState({}, '', `${window.location.pathname}${href}`);
+          scrollToSection(e, href);
         }, 50);
+      } else {
+        scrollToSection(e, href);
       }
     },
     [isMenuOpen, closeMenu]
@@ -152,7 +137,7 @@ const Navbar = () => {
             href='#home'
             className={styles.logo}
             onClick={(e) => {
-              scrollToSection(e, '#home');
+              handleScrollToSection(e, '#home');
               setIsMenuOpen(false);
             }}
             aria-label='Home'
@@ -174,7 +159,7 @@ const Navbar = () => {
                   activeSection === link.href.substring(1) ? styles.active : ''
                 }`}
                 onClick={(e) => {
-                  scrollToSection(e, link.href);
+                  handleScrollToSection(e, link.href);
                   setIsMenuOpen(false);
                 }}
                 tabIndex={isMenuOpen ? 0 : -1}

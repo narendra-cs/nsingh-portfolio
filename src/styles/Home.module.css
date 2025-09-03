@@ -1,16 +1,20 @@
 @import './theme.css';
 
+/* Home section with self-contained styles */
 .homeSection {
   min-height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  padding: 4rem 0;
+  padding: 6rem 1.5rem 2rem;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  scroll-margin-top: 80px; /* Match navbar height */
+  width: 100%;
 }
 
 .imageContainer {
@@ -37,10 +41,37 @@
   transform: translateY(-5px);
 }
 
-/* Home-specific responsive styles */
+@media (max-width: 1200px) {
+  .homeSection {
+    padding: 6rem 2rem 2rem;
+  }
+}
+
 @media (max-width: 992px) {
+  .homeSection {
+    padding: 5rem 1.5rem 2rem;
+    min-height: auto;
+  }
+
   .imageContainer {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .homeSection {
+    padding: 5rem 1.25rem 2rem;
+    min-height: auto;
+  }
+
+  .homeSection h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  .homeSection h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 }
