@@ -1,0 +1,480 @@
+{
+  "name": "Narendra Singh",
+  "title": "Data Engineer",
+  "subtitle": ["Big Data Specialist", "AI Enthusiast"],
+  "intro": "Crafting **resilient**, **scalable**, **high-performance** **data solutions** — from **real-time** **ETL** to scalable **cloud-native** platforms — to drive **insights** and **business value**.",
+  "imageUrl": "/images/narendra_singh.jpg",
+  "about": [
+    "I'm a Data Engineer focused on building **scalable**, **high-performance** **data** **platforms** that drive real-time insights, advanced analytics, and reliable decision-making. I design and implement **end-to-end** **data** **solutions** — from **real-time** and **batch** data pipelines to optimized **data lakes** — using tools like **Apache Spark**, **Delta Lake**, **Iceberg**, and **Airflow**. With experience across cloud environments such as **AWS**, **Azure**, and **Tencent Cloud**, I create data systems that are robust, efficient, flexible, and built for scale. I aim to create data systems that not only work—but do so **beautifully**, **reliably**, and **with purpose**."
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "category": ["Programming Language"],
+      "icon": "fab fa-python"
+    },
+    {
+      "name": "Scala",
+      "category": ["Programming Language"],
+      "icon": "svg-scala"
+    },
+    {
+      "name": "Bash",
+      "category": [
+        "Programming Language"
+      ],
+      "icon": "fas fa-terminal"
+    },
+    {
+      "name": "AWS",
+      "category": [
+        "Cloud"
+      ],
+      "icon": "fab fa-aws"
+    },
+    {
+      "name": "Azure",
+      "category": [
+        "Cloud"
+      ],
+      "icon": "fab fa-windows"
+    },
+    {
+      "name": "Tencent",
+      "category": [
+        "Cloud"
+      ],
+      "icon": "fas fa-cloud"
+    },
+    {
+      "name": "Airflow",
+      "category": [
+        "Data",
+        "Orchestration"
+      ],
+      "icon": "fas fa-fan"
+    },
+    {
+      "name": "Hadoop",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-hadoop"
+    },
+    {
+      "name": "Spark",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-spark"
+    },
+    {
+      "name": "Databricks",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-databricks"
+    },
+    {
+      "name": "Kafka",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-kafka"
+    },
+    {
+      "name": "SQL",
+      "category": [
+        "Data"
+      ],
+      "icon": "fas fa-database"
+    },
+    {
+      "name": "Hive",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-hive"
+    },
+    {
+      "name": "MySQL",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-mysql"
+    },
+    {
+      "name": "Postgres",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-postgres"
+    },
+    {
+      "name": "Elasticsearch",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-elasticsearch"
+    },
+    {
+      "name": "Logstash",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-logstash"
+    },
+    {
+      "name": "Kibana",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-kibana"
+    },
+    {
+      "name": "Clickhouse",
+      "category": [
+        "Data"
+      ],
+      "icon": "fas fa-database"
+    },
+    {
+      "name": "LLM",
+      "category": [
+        "AI/ML"
+      ],
+      "icon": "fas fa-robot"
+    },
+    {
+      "name": "Ollama",
+      "category": [
+        "AI/ML"
+      ],
+      "icon": "fas fa-brain"
+    },
+    {
+      "name": "LangChain",
+      "category": [
+        "AI/ML"
+      ],
+      "icon": "fas fa-link"
+    },
+    {
+      "name": "FastAPI",
+      "category": [
+        "Backend"
+      ],
+      "icon": "svg-fastapi"
+    },
+    {
+      "name": "Docker",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "svg-docker"
+    },
+    {
+      "name": "K8s",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "svg-k8s"
+    },
+    {
+      "name": "CircleCI",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "svg-circleci"
+    },
+    {
+      "name": "GitHub",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "fab fa-github"
+    },
+    {
+      "name": "GitLab",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "fab fa-gitlab"
+    },
+    {
+      "name": "Bitbucket",
+      "category": [
+        "DevOps"
+      ],
+      "icon": "fab fa-bitbucket"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "RAG-based Chat Assistant for FAQ",
+      "imageUrl": "/images/projects-imgs/Q&A_Chatbot_chat.png",
+      "description": "A specialized Retrieval-Augmented Generation (RAG) system that enhances product support by providing accurate, context-aware responses to customer inquiries. This solution combines the power of large language models with targeted knowledge retrieval from product documentation.",
+      "technologies": [
+        "LLM",
+        "LangChain",
+        "RAG",
+        "VectorDB",
+        "FastAPI",
+        "Python",
+        "React"
+      ],
+      "githubUrl": "https://github.com/narendra-cs/rag-based-chat-assistent-for-faq",
+      "demoUrl": ""
+    },
+    {
+      "id": 2,
+      "title": "AI-Powered Story Telling Platform",
+      "imageUrl": "/images/projects-imgs/story_telling_platform.png",
+      "description": "An interactive web application that generates personalized stories using AI models from OpenAI, LangChain, and local LLMs via Ollama. Users can provide inputs and receive AI-generated stories based on their preferences.",
+      "technologies": [
+        "LLM",
+        "OpenAI",
+        "Ollama",
+        "LangChain",
+        "FastAPI",
+        "Python"
+      ],
+      "githubUrl": "https://github.com/narendra-cs/Story-Telling-Platform"
+    }
+  ],
+  "professionalExperience": [
+    {
+      "title": "Senior Data Engineer",
+      "company": "Thoughtworks",
+      "companyUrl":"https://www.thoughtworks.com/",
+      "companyLogo":"/images/companies-logo/thoughtworks.svg",
+      "startDate": "2023-12-04",
+      "endDate": null,
+      "location": "Pune, India",
+      "description": "As a Senior Data Engineer, I led the design and delivery of scalable, high-performance data pipelines supporting critical business reporting and analytics. My work spanned end-to-end ETL development (real-time and batch), cloud migration, and data quality automation, enabling faster, more reliable data-driven decision-making across teams.",
+      "technologies": [
+        "Spark",
+        "Databricks",
+        "Kafka",
+        "Airflow",
+        "AWS",
+        "Azure",
+        "Tencent Cloud",
+        "Python",
+        "PostgreSQL",
+        "SQL",
+        "Great Expectations",
+        "AWS S3",
+        "AWS EMR",
+        "AWS Glue",
+        "AWS Athena"
+      ]
+    },
+    {
+      "title": "Senior Data Engineer",
+      "company": "Xoriant Solutions",
+      "companyUrl":"https://www.xoriant.com/",
+      "companyLogo":"/images/companies-logo/xoriant.png",
+      "startDate": "2022-05-20",
+      "endDate": "2023-12-01",
+      "location": "Pune, India",
+      "description": "As a Senior Data Engineer, I was responsible for building and optimizing scalable data pipelines, improving system reliability, and driving cost efficiencies on AWS-based big data platforms. My contributions significantly enhanced data pipeline performance, operational automation, and business outcomes through better data reliability and analytics enablement.",
+      "technologies": [
+        "Spark",
+        "Databricks",
+        "Kafka",
+        "Airflow",
+        "Python",
+        "Scala",
+        "SQL",
+        "Kudu",
+        "CircleCI",
+        "AWS S3",
+        "AWS EMR",
+        "AWS Glue",
+        "AWS Athena",
+        "AWS Lambda",
+        "AWS CloudWatch"
+      ]
+    },
+    {
+      "title": "Data Engineer",
+      "company": "Qualys Inc.",
+      "companyUrl":"https://www.qualys.com/",
+      "companyLogo":"/images/companies-logo/qualys.svg",
+      "startDate": "2020-07-06",
+      "endDate": "2022-05-18",
+      "location": "Pune, India",
+      "description": "As a Data Engineer in the Security Analytics space, I designed and developed real-time and batch data pipelines to support advanced cybersecurity use cases across Extended Detection and Response (XDR), event logging, and vulnerability reporting. My work focused on building scalable ETL solutions, optimizing data storage and processing, and integrating diverse data sources to enable actionable insights and automation.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Bash",
+        "Splunk",
+        "Elasticsearch",
+        "Logstash",
+        "Kibana",
+        "AWS",
+        "GCP",
+        "Spark",
+        "Kafka",
+        "Scala",
+        "MySQL",
+        "HDFS",
+        "Hadoop"
+      ]
+    },
+    {
+      "title": "Deputy Manager",
+      "company": "Axis Bank Ltd.",
+      "companyUrl":"https://www.axisbank.com/",
+      "companyLogo":"/images/companies-logo/axis_bank.png",
+      "startDate": "2019-03-15",
+      "endDate": "2020-06-25",
+      "location": "Mumbai, India",
+      "description": "Led the architecture and implementation of the Security Big Data Lake (SBDL) to support advanced security analytics and UEBA in a hybrid cloud environment. Designed scalable logging pipelines for AWS and Azure, performed cloud infrastructure risk assessments, and enhanced the bank's forensic readiness. Also managed a 7-member team responsible for security incident investigation and response.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Bash",
+        "Elasticsearch",
+        "Logstash",
+        "Kibana",
+        "AWS",
+        "Azure"
+      ]
+    },
+    {
+      "title": "Project Engineer",
+      "company": "CDAC",
+      "companyUrl":"https://www.cdac.in/",
+      "companyLogo":"/images/companies-logo/cdac.png",
+      "startDate": "2017-02-20",
+      "endDate": "2019-03-10",
+      "location": "Pune, India",
+      "description": "Contributed to the deployment and performance optimization of large-scale Hadoop and High-Performance Computing (HPC) systems. Focused on automation, cluster management, and system monitoring to ensure efficient resource utilization across 400+ nodes.",
+      "technologies": [
+        "Python",
+        "Bash",
+        "Hadoop",
+        "MySQL"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "position": "Software Engineer",
+      "company": "Thoughtworks",
+      "quote": "Narendra is a great Data Engineer. He is always willing to help and is a great team player.",
+      "linkedinUrl": "https://linkedin.com/in/yourusername"
+    },
+    {
+      "name": "Narendra Singh",
+      "position": "Data Engineer",
+      "company": "Thoughtworks",
+      "quote": "Narendra is a great Data Engineer. He is always willing to help and is a great team player.",
+      "linkedinUrl": "https://linkedin.com/in/narendra-cs"
+    },
+    {
+      "name": "Narendra Singh",
+      "position": "Data Engineer",
+      "company": "Thoughtworks",
+      "quote": "Narendra is a great Data Engineer. He is always willing to help and is a great team player.",
+      "linkedinUrl": "https://linkedin.com/in/narendra-cs"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Databricks Certified Data Engineer Associate",
+      "issuer": "Databricks",
+      "issuedOn": "2024-12-28",
+      "expiresOn": "2026-12-28",
+      "credentialUrl": "https://credentials.databricks.com/071d18c3-131a-4768-8eec-963926b90671#acc.ip2ErL9l",
+      "icon": "svg-databricks"
+    },
+    {
+      "name": "Academy Accreditation - Databricks Lakehouse Fundamentals",
+      "issuer": "Databricks",
+      "issuedOn": "2023-01-15",
+      "expiresOn": "2024-01-15",
+      "credentialUrl": "https://credentials.databricks.com/7759616d-cd42-413e-8c94-7a5baf6e30c3#acc.jxQ1t46e",
+      "icon": "svg-databricks"
+    },
+    {
+      "name": "Confluent Fundamentals Accreditation",
+      "issuer": "Confluent",
+      "issuedOn": "2025-08-17",
+      "expiresOn": null,
+      "credentialUrl": "https://certificates.confluent.io/a59cb32c-f339-4a64-b101-e7a350de4a4f#acc.kRhvKwiU",
+      "icon": "svg-confluent"
+    },
+    {
+      "name": "CCA-175: Spark and Hadoop Developer",
+      "issuer": "Cloudera",
+      "issuedOn": "2025-08-17",
+      "expiresOn": null,
+      "credentialUrl": "#",
+      "icon": "svg-cloudera"
+    },
+    {
+      "name": "Astronomer Certification for Apache Airflow Fundamentals",
+      "issuer": "Astronomer",
+      "issuedOn": "2025-08-17",
+      "expiresOn": null,
+      "credentialUrl": "#",
+      "icon": "fas fa-fan"
+    }
+  ],
+  "contactDetails": {
+    "message": "Whether you have a question, a project idea, or just want to say hello — I’d love to hear from you. Feel free to reach out, and I’ll get back to you as soon as possible. Thanks for stopping by!",
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/narendra-cs",
+        "icon": "fab fa-github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/narendra-cs/",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:narendra.cs.biet@gmail.com",
+        "icon": "fas fa-envelope"
+      }
+    ]
+  },
+  "quotes": [
+    {
+      "quote": "If data scientists are the race car drivers, then data engineers are the pit crew.",
+      "author": "**Maxime Beauchemin** (Creator of Apache Airflow)"
+    },
+    {
+      "quote": "Garbage in, garbage out.",
+      "author": "**George Fuechsel** (IBM Programmer)"
+    },
+    {
+      "quote": "Without data you're just another person with an opinion.",
+      "author": "**W. Edwards Deming**"
+    },
+    {
+      "quote": "The best systems are the ones you don’t notice because they work so seamlessly.",
+      "author": null
+    },
+    {
+      "quote": "Make it work, make it right, make it fast.",
+      "author": "**Kent Beck** (Agile Manifesto co-author)"
+    },
+    {
+      "quote": "First, solve the problem. Then, write the code.",
+      "author": "**John Johnson** (Software Engineer)"
+    },
+    {
+      "quote": "Data is the new oil.",
+      "author": "**Clive Humby** (Founder of Humby Analytics)"
+    }
+  ]
+}

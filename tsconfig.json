@@ -2,11 +2,19 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "strict": true,
     "jsx": "react-jsx",
-    "types": ["vite/client", "jest", "node", "@testing-library/jest-dom"]
+    "types": ["vite/client", "jest", "node", "@testing-library/jest-dom"],
+    "resolveJsonModule": true,
+    "jsxImportSource": "react",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true
   },
   "include": ["src", "tests"],
   "exclude": ["node_modules"]

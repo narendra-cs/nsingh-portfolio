@@ -1,0 +1,180 @@
+.testimonials {
+  margin: 6rem 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.testimonialsWrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.testimonialsContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+
+.testimonialsTrack {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  animation: scroll var(--scroll-duration, 30s) linear infinite;
+}
+
+.testimonialsTrack.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3)); /* Move by one third of the width */
+  }
+}
+
+.testimonialCard {
+  background: transparent;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  width: 320px;
+  min-width: 320px;
+  max-width: calc(100vw - 4rem);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  scroll-snap-align: start;
+  height: auto;
+  min-height: 200px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Apply background and border only in dark theme by default */
+[data-theme='dark'] .testimonialCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonialCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+  z-index: 2;
+}
+
+.testimonialCard:hover::before {
+  opacity: 0.05;
+}
+
+[data-theme='dark'] .testimonialCard:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary);
+}
+
+[data-theme='dark'] .testimonialCard {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.quoteIcon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.quote {
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--primary);
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-height: 150px;
+  font-size: 0.95rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.authorInfo {
+  flex: 1;
+}
+
+.authorName {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.authorTitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.linkedinIcon {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+  margin-left: 1rem;
+}
+
+.linkedinIcon:hover {
+  color: var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialCard {
+    padding: 1.5rem;
+  }
+}

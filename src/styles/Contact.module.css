@@ -1,0 +1,52 @@
+.contactSection {
+  display: flex;
+  align-items: flex-start; /* Align to top */
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  align-items: center; /* Center items vertically */
+}
+
+/* Add this to ensure the message container takes full height */
+.contactInfo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactMessage {
+  margin: 1.5rem 0;
+  line-height: 1.6;
+}
+
+.contactFormContainer {
+  background: transparent;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.contactFormContainer .form {
+  max-width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
