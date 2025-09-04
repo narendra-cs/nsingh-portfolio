@@ -10,6 +10,8 @@ const Home: React.FC = () => {
   const title = portfolioStore.portfolioData?.title ?? '';
   const name = portfolioStore.portfolioData?.name ?? '';
   const imageUrl = portfolioStore.portfolioData?.imageUrl ?? '';
+  const intro = portfolioStore.portfolioData?.intro ?? '';
+  const subtitle = portfolioStore.portfolioData?.subtitle ?? [];
 
   return (
     <section id='home' className={styles.homeSection}>
@@ -18,14 +20,19 @@ const Home: React.FC = () => {
           <h1 className={shared.title}>
             Hi, I'm <span className={shared.highlight}>{name}</span>
           </h1>
-          <h2 className={shared.subtitle}>{title && <>{title} & </>}Tech Enthusiast</h2>
+          <h2 className={shared.subtitle}>
+            {title && <>{title}</>}
+            {subtitle.map((subtitle, index) => (
+              <span key={index}> | {subtitle}</span>
+            ))}
+          </h2>
           <div className={shared.markdownContainer}>
             <ReactMarkdown
               components={{
                 strong: ({ ...props }) => <strong className={shared.highlight} {...props} />,
               }}
             >
-              I build **data solutions** and create meaningful user experiences through **code**.
+              {intro}
             </ReactMarkdown>
           </div>
           <div className={shared.ctaButtons}>

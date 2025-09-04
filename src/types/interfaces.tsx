@@ -15,6 +15,8 @@ export interface ThemeContextType {
 export interface PortfolioData {
   name: string;
   title: string;
+  subtitle: string[];
+  intro: string;
   imageUrl: string;
   about: string[];
   skills: Skill[];
