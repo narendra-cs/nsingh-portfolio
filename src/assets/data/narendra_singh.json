@@ -55,6 +55,13 @@
       "icon": "fas fa-fan"
     },
     {
+      "name": "Hadoop",
+      "category": [
+        "Data"
+      ],
+      "icon": "svg-hadoop"
+    },
+    {
       "name": "Spark",
       "category": [
         "Data"
@@ -439,5 +446,35 @@
         "icon": "fas fa-envelope"
       }
     ]
-  }
+  },
+  "quotes": [
+    {
+      "quote": "If data scientists are the race car drivers, then data engineers are the pit crew.",
+      "author": "**Maxime Beauchemin** (Creator of Apache Airflow)"
+    },
+    {
+      "quote": "Garbage in, garbage out.",
+      "author": "**George Fuechsel** (IBM Programmer)"
+    },
+    {
+      "quote": "Without data you're just another person with an opinion.",
+      "author": "**W. Edwards Deming**"
+    },
+    {
+      "quote": "The best systems are the ones you don’t notice because they work so seamlessly.",
+      "author": null
+    },
+    {
+      "quote": "Make it work, make it right, make it fast.",
+      "author": "**Kent Beck** (Agile Manifesto co-author)"
+    },
+    {
+      "quote": "First, solve the problem. Then, write the code.",
+      "author": "**John Johnson** (Software Engineer)"
+    },
+    {
+      "quote": "Data is the new oil.",
+      "author": "**Clive Humby** (Founder of Humby Analytics)"
+    }
+  ]
 }

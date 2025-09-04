@@ -404,6 +404,107 @@
   width: 100%;
 }
 
+/* Quote section styles */
+.quoteSection {
+  flex: 1;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Show quote section on medium and larger screens */
+@media (min-width: 768px) {
+  .quoteSection {
+    display: flex;
+  }
+}
+
+.quoteContainer {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.quoteBlock {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border: none;
+  font-style: normal;
+}
+
+.quoteIcon {
+  color: var(--text-inverse);
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+  min-height: 24px;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* Styling for the text-based quote mark */
+.quoteMark {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--text-inverse);
+  font-family: Georgia, serif;
+  display: block;
+  margin: 0 auto 0.5rem;
+  height: 1.5rem;
+  opacity: 0.9;
+  background-color: transparent;
+}
+
+.quoteText {
+  color: var(--text-inverse);
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  position: relative;
+  padding: 0 1rem;
+  font-style: normal;
+}
+
+.quoteFooter {
+  margin-top: 0.5rem;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.quoteAuthor {
+  color: var(--text-inverse);
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-style: normal;
+  opacity: 0.9;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Adjust quote section for mobile */
+@media (max-width: 768px) {
+  .quoteSection {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+    margin: 1rem 0;
+  }
+
+  .quoteText {
+    font-size: 1rem;
+  }
+}
+
 /* Base footer heading style */
 .footerHeading {
   color: var(--text-inverse);

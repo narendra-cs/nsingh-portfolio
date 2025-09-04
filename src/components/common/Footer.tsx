@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { usePortfolioData } from '../../contexts';
 import shared from '../../styles/Shared.module.css';
 import { navbarLinks } from './Constants';
@@ -11,7 +12,21 @@ const Footer: React.FC = () => {
   }
 
   const { socialLinks } = portfolioStore.portfolioData.contactDetails;
+  const { quotes = [] } = portfolioStore.portfolioData;
   const currentYear = new Date().getFullYear();
+
+  // Get a quote based on the current date
+  const getDailyQuote = () => {
+    if (!quotes || quotes.length === 0) return null;
+    const today = new Date();
+    const dayOfYear = Math.floor(
+      (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24)
+    );
+    const quoteIndex = dayOfYear % quotes.length;
+    return quotes[quoteIndex];
+  };
+
+  const dailyQuote = getDailyQuote();
 
   return (
     <footer className={shared.footer}>
@@ -31,8 +46,30 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Middle Section - Empty */}
-          <div className={shared.footerSection}>{/* Empty section as per requirement */}</div>
+          {/* Middle Section - Daily Quote */}
+          <div className={`${shared.footerSection} ${shared.quoteSection}`}>
+            {dailyQuote ? (
+              <div className={shared.quoteContainer}>
+                <blockquote className={shared.quoteBlock}>
+                  <div className={shared.quoteIcon}>
+                    <span className={shared.quoteMark}>&ldquo;</span>
+                  </div>
+                  <p className={shared.quoteText}>{dailyQuote.quote}</p>
+                  {dailyQuote.author && (
+                    <footer className={shared.quoteFooter}>
+                      <cite className={shared.quoteAuthor}>
+                        <ReactMarkdown components={{ p: 'span' }}>
+                          {`— ${dailyQuote.author}`}
+                        </ReactMarkdown>
+                      </cite>
+                    </footer>
+                  )}
+                </blockquote>
+              </div>
+            ) : (
+              <div className={shared.quoteContainer}></div>
+            )}
+          </div>
 
           {/* Right Section - Social Links */}
           <div className={shared.footerSection}>

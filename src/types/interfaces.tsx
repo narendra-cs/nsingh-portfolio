@@ -25,6 +25,7 @@ export interface PortfolioData {
   professionalExperience: Experience[];
   certifications: Certification[];
   testimonials: Testimonial[];
+  quotes: Quote[];
 }
 
 export interface Skill {
@@ -81,4 +82,9 @@ export interface Testimonial {
   company: string;
   quote: string;
   linkedinUrl: string;
+}
+
+export interface Quote {
+  quote: string;
+  author: string | null;
 }
